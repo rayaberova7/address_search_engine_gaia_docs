@@ -1,0 +1,115 @@
+
+Nous allons dans cette partie aborder les concepts d'apprentissage profond (*deep learning*) et expliquer notre démarche et l'application de ces outils à nos problématiques précises. Néanmoins, pour la bonne compréhension du lecteur, des rappels seront faits sur l'état de l'art et les concepts sous-tendant les méthodes pertinentes dans le cadre de ce projet.
+
+## Les modèles de *deep learning*
+
+En *machine learning*, la sous-classe des modèles de *deep learning* ou réseaux de neurones profonds désigne des modèles dont la conception est inspirée du fonctionnement du cerveau humain. Ces neurones sont seulement capables d'opérations très simples, à savoir qu'ils peuvent s'activer si le signal qu'ils reçoivent en entrée est suffisamment fort et transmettent leur activation dans ce cas. Un grand nombre de neurones correctement organisés permet alors de réaliser des opérations plus complexes, résultantes des différentes activations. 
+
+Cependant, leur utilisation n'est pas systématique et la qualité des données utilisées en entrée de ces réseaux est cruciale. En effet, le problème de segmentation est un problème compliqué et nécessite un grand nombre d'images d'entraînement. Par ailleurs, la labellisation de chaque pixel dans les images du jeu d'entraînement est très coûteuse. Les premiers modèles de *deep learning* sont en outre apparus depuis plus de 10 ans, mais malgré leurs bonnes performances, le coût d'entraînement de ces modèles était alors prohibitif. L'approche classique plus parcimonieuse qui consiste à calculer en amont un ensemble de descripteurs $X$ à partir de l'image en entrée puis de construire un modèle à partir des descripteurs extraits était plus pertinente.
+
+Dans la classe des modèles de *deep learning*, les réseaux de neurones convolutifs occupent une place importante car ils sont particulièrement adaptés au travail sur les images.
+
+## Réseaux de neurones convolutifs
+
+Les réseaux de neurones convolutifs tirent leur inspiration du cortex visuel des animaux et se composent de deux parties (voir @fig-CNN) :
+
+1. Une première partie composée par des couches de convolutions successives qui permet d'extraire des prédicteurs de l'image en entrée du réseau;
+2. Une seconde partie permettant de classifier les pixels de l'image en entrée à partir des prédicteurs obtenus dans la première partie.
+
+![Réseau de neurones convolutif](img/CNN.png){#fig-CNN width=75%}
+
+<!-- Note de lecture : La partie convolutive est représentée par les différents cubes à gauche et la partie classifiante est représentée par les rectangles fins et bleus à droite. -->
+
+Dans la partie convolutive, l'image en entrée du réseau se voit appliquer des filtres appelés convolutions, représentés par des matrices $A = (a_{ij})$ de petite taille appelés noyaux de convolution. L'image en sortie de l'opération de convolution est obtenue à partir de chaque pixel de l'image en entrée en calculant la somme des pixels avoisinant, pondérée par les coefficients $a_{ij}$ du noyau de convolution. Cette opération de convolution est illustrée dans la @fig-ex_conv, extraite de l'ouvrage @Kim_2017.
+
+![Exemple d'opération de convolution](img/conv.jpg){#fig-ex_conv width=50%}
+
+<!-- L'image résultante est une image plus petite dont les pixels sont égaux à la somme des pixels de l'image en entrée pondérée par les coefficients du noyau de convolution. -->
+
+Une convolution résume donc l'information contenue dans l'image. Il est d'ailleurs intéressant de remarquer que la convolution engendrera des valeurs en sortie élevées pour des pixels dont le voisinage présente la même structure que le noyau associé à cette convolution, de telle sorte que la forme du noyau donne une indication sur les parties de l'image qui seront mises en évidence par ce dernier. Une "couche" du réseau de neurone convolutif correspond en fait à l'application d'un nombre $n_f$ de filtres convolutifs. Ainsi, en sortie d'une couche, il y a autant d'images que de filtres appliqués. Pour la couche suivante on applique alors des filtres convolutifs sur les images à $n_f$ bandes issues de la couche précédente. 
+
+Un réseau de neurones convolutif est alors constitué de plusieurs couches. Les premières couches permettent de détecter des formes simples dans l'image (lignes horizontales, verticales, diagonales etc.) tandis que les couches suivantes, plus spécialisées, vont combiner les concepts simples appris par les couches précédentes et détecter des formes plus complexes, ce qui est schématisé dans la  @fig-Convolution.
+
+![Représentation d'une convolution](img/convolution.png){#fig-Convolution width=75%}
+
+<!-- Les premières couches convolutives reconnaissent les formes simples tandis que les couches les plus profondes à droite reconnaissent des formes plus concrètes. -->
+
+Des opérations dites de "max pooling" illustrées dans la @fig-Maxpool permettent de réduire la dimension des images obtenues entre chaque couche tout en restant proche de l'information extraite par convolution. Cette réduction de dimension permet de diminuer le nombre de calculs par couche et autorise la construction de réseaux avec un grand nombre de couches souvent plus performants. D'autres opérations telles que le padding détaillé dans la @fig-Padding permettent de contrôler la dimension de l'image en sortie.
+
+![Représentation du maxpool](img/maxpool.png){#fig-Maxpool width=40%}
+
+<!-- L'image résultante de l'opération de max-pooling est égale au maximum de chaque pixel dans chacune des zones dessinées sur l'image de gauche. -->
+
+
+![Représentation du padding](img/padding.png){#fig-Padding width=40%}
+
+<!-- Note de lecture : l'ajout d'une bande de 0 autour de l'image avant d'appliquer la convolution permet de limiter la réduction de dimension de l'image résultante -->
+
+Une fonction d'activation (concept proche de la neurobiologie) non linéaire de type ReLU (Rectifiar Linear Unit) est appliquée systématiquement après chaque couche (cf. @fig-ReLu). L'utilisation de fonctions non linéaires n'est pas réservée aux seuls réseaux de neurones convolutifs mais à l'ensemble des modèles de *deep learning*. Ces fonctions non linéaires vont permettre *in fine* de former des réseaux de neurones capables de prédire des phénomènes non linéaires. Ces réseaux s'adapteront mieux au traitement des images.
+
+![Fonction d'activation ReLu](img/relu-2.png){#fig-ReLu width=40%}
+
+<!-- Note de lecture : la fonction ReLU "s'active" quand l'argument est positif. -->
+
+
+Par rapport au cadre d'apprentissage classique en *machine learning*, la spécificité de ce type d'algorithmes réside dans le fait que l'extraction des caractéristiques de l'image en entrée n'est pas réalisée manuellement ou à dire d'expert mais est automatisée lors de l'entraînement du modèle. Les coefficients contenus dans les différents noyaux convolutifs font en effet partie du vecteur $\theta$ des paramètres du modèle. Ainsi, une fois le modèle entraîné, le jeu de paramètres optimal $\theta^{*}$ calculé décrit en fait l'ensemble des filtres convolutifs appliqués à l'image. Les descripteurs de l'image ainsi produits par les applications successives de ces filtres sont alors confrontés à la partie classifiante du réseau. Or, dans le cadre classique, les descripteurs de l'image sont obtenus manuellement : il peut par exemple s'agir de convolutions dont les paramètres sont fixés ou bien de statistiques produites à partir des 4 bandes de l'image (moyenne sur l'infrarouge, coefficient de variation, etc..). 
+
+En sortie des réseaux de neurones convolutifs classiques, la partie classifiante permet  d'attribuer une catégorie à l'image en entrée. On veut, par exemple, savoir si l'image étudiée est une image de chien ou de chat. Pour ce faire, la partie classifiante part de la concaténation dans un vecteur de la sortie de la partie convolutive et retourne, par le biais d'un réseau de neurones dense (ou "fully connected"), un vecteur en sortie $x =(x_0,..,x_9)$ pour une classification sur 10 classes. Ce vecteur est ensuite transformé en une distribution de probabilité par l'opération de softmax suivante :
+
+$$
+\text{Softmax}(x_i) = \frac{\exp{x_i}} {\sum\limits_{j=0}^{9}{\exp{x_j}}}
+$$ {#eq-softmax}
+
+
+
+On classera l'image dans la catégorie ayant la plus forte probabilité calculée. La fonction softmax est infiniment dérivable et  permet en fait de préserver la dérivabilité en les paramètres $\theta$ de notre modèle $f_{\theta}$ appliqué à une image $X$. La dérivabilité des fonctions d'erreurs qui seront calculées à partir des prédictions du réseau en découle.
+
+Dans le cadre de la segmentation d'image, la sortie est plus complexe puisqu'on veut obtenir un vecteur de distribution par pixel. Nous présentons dans la suite les modèles qui apparaissent souvent dans la littérature scientifique construits à partir de briques de convolutions.
+
+## Modèles de segmentation
+
+Les algorithmes de segmentation peuvent être vus comme des algorithmes classifiant un par un les pixels de l'image. Dans le cadre de la détection de bâti, un algorithme de segmentation prend donc une image en entrée et attribue pour chaque pixel une probabilité de présence de bâti sur ce même pixel (0,1). Le masque prédit l'est ensuite en seuillant cette probabilité et en classant en logement tous les pixels de l'image tels que la probabilité affichée par le réseau excède ce seuil.
+
+Dans la littérature, les modèles de segmentation sont souvent basés sur une structure en forme de $U$ *i.e.* composés de :
+
+- Une partie descendante, l'encodeur, qui va permettre de transformer l'image en entrée en un vecteur numérique de taille réduite par rapport au nombre de pixels initial de l'image. La partie encodeur étant un réseau de neurones convolutif classique tel que présenté à la partie précédente.
+- Une partie ascendante, le décodeur, qui va partir du vecteur obtenu précedemment (aussi appelé embedding) et remonter par opérations dites de convolutions inverses à une sortie de la même dimension que l'image. 
+
+La qualité du processus de segmentation par l'algorithme est très liée à la qualité de l'encodeur dont le but est de réécrire les images dans un espace suffisamment expressif et interprétable par le décodeur.
+
+Les deux parties (encodeur et décodeur) sont paramétrées et sont donc améliorées lors de l'entraînement. Beaucoup de couches finissent par séparer l'image en input du masque produit en sortie. Du fait des opérations de *Max Pooling* successives dont le but premier est d'alléger le nombre de paramètres du réseau, l'information au niveau local se perd à travers les couches du réseau, et l'information vectorisée en sortie de l'encodeur ne retranscrit plus suffisamment les phénomènes locaux, lissés par cette opération d'agrégation. Dans @Visin_Ciccone_Romero_Kastner_Cho_Bengio_Matteucci_Courville_2016 et @Jégou_Drozdzal_Vazquez_Romero_Bengio_2017, les auteurs présentent des structures de modèle de segmentation permettant de pallier ce défaut. Dans ces modèles, les éléments en sortie de certaines couches servent d'entrée à plusieurs des couches suivantes. Visuellement, certaines couches sont alors court-circuitées. 
+
+Le U-net @Ronneberger_Fischer_Brox_2015b pousse cette logique un peu plus loin en allant jusqu'à connecter les couches de la partie contractante aux couches de la partie expansive. 
+La @fig-unet schématise la structure du U-net. D'autres architectures telles que présentées dans @chen2017rethinking reposent sur des formes de convolution spécifiques (*atrous convolution*) ayant pour but de minimiser l'effet résumant des opérations de *Max Pooling*. Ces structures sont très lourdes et plusieurs structures du même type mais allégées ont été produites par la suite.
+
+![Représentation schématique du Unet](img/Unet-remanie.png){#fig-unet width=75%}
+
+
+Plus récemment, la construction des modèles de segmentation s'est beaucoup inspirée de celle des Large Language Model (par exemple chatGPT) dont l'efficacité n'est plus à démontrer. Par analogie avec les séquences de mots, si on considère que les images sont des séquences à deux dimensions alors on peut appliquer des structures de type "transformer" (cf. @vaswani2017attention) sur ces dernières. Ainsi, dans @dosovitskiy2021image les auteurs montrent qu'on peut entraîner un modèle de classification s'appuyant uniquement sur des transformers (en opposition aux réseaux de neurones convolutifs). Dans @xie2021segformer, les auteurs généralisent cette approche aux modèles de segmentation en utilisant un décodeur basé sur une structure de tranformer.
+L'avantage principal de l'utilisation de telles structures est le gain en efficience (performance à nombre de paramètres fixés), qui contraste beaucoup avec les structures basées sur des réseaux de neurones convolutifs présentées précédemment. 
+
+
+## Description de l'entraînement réalisé
+
+Les ramifications possibles du projet sont très nombreuses, en découle un ensemble de choix tentaculaire. L'équipe de projet après une phase d'expérimentation des modèles a donc décidé de produire au plus vite une chaîne de traitement complète en faisant des choix rapides afin de stabiliser une chaîne de production faisant office de *proof of concept*.
+
+Un entraînement d'un réseau de type *Segformer* a été réalisé sur la base des images PLEIADES couvrant la Martinique et la Guadeloupe en 2022. Pour annoter ces images, on se sert des versions disponibles de la BDTOPO produite par l'IGN en acceptant les divergences inévitables liées aux temporalités différentes des prises de vues et de constitution des bases topographiques. Les algorithmes entrainés à partir de ce jeu d'entraînement ne peuvent alors détecter que du bâti. Un modèle de segmentation de type Segformer a été entrainé sur les couples ainsi obtenus.
+
+Le choix des territoires et des années sur lesquels l'algorithme sera entraîné repose sur un trade-off entre spécialisation et généralisation : d'un côté il est souhaitable que les territoires sur lesquels s'entraînent l'algorithme soient de même nature que les territoires sur lesquels on l'évalue, de l'autre il nous faut un jeu de situations suffisamment large pour que nos algortihmes puissent s'adapter à des situations ou structures nouvelles. Entraîner un algorithme par territoire en se servant uniquement des images couvrant ce dernier pourrait conduire à un algorithme très spécialisé mais pas suffisamment général qui ne serait pas capable de s'adapter à des zones d'habitat d'un genre nouveau.
+
+L'entraînement des algorithmes de *deep learning* se réalise par itérations successives. A chaque itération, l'algorithme réalise des prédictions sur un petit paquet d'images sélectionnées aléatoirement. En comparant les prédictions avec les masques construits à l'étape précédente on arrive à en déduire une erreur qui dépend des paramètres $\theta$ du modèle. On peut ensuite bouger les paramètres dans le sens où l'erreur semble diminuer (en ayant calculé le gradient de l'erreur au préalable). On arrête l'entraînement quand le jeu d'images a été parcouru plusieurs fois par l'algorithme. Un entraînement dure 10 heures en moyenne.
+
+Pour évaluer les résultats de notre algorithme pendant l'entraînement, certaines zones de Mayotte correctement labellisées ont été sélectionnées. On calcul la moyenne de l'Intersection Over Union (IOU) obtenu sur le jeu de données considéré (cf. @fig-iou). L'IOU mesure la superposition des prédictions de l'algorithme aux annotations connues et est compris entre 0 (aucun recoupement) et 1 (superposition parfaite).
+
+![Intersection over union](img/IOUschema.png){#fig-iou width=50%}
+
+A l'issue de l'entraînement du modèle sélectionné, les prédictions de l'algorithme recouvrent les annotations du jeu de test à hauteur de 75%.
+
+
+<!-- Condition de l'entraînement, taille du batch, nombre d'epochs
+MLFLOW pour le suivi et la sauvegarde
+Statistiques, type IOU etc.. courbze d'évolution de la loss.
+Aller au delà des statistiques et regarder 
+ -->
+
+

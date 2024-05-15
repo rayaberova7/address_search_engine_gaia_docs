@@ -61,3 +61,7 @@ format:
 # Préparation des données 
 
 {{< include sections/2-preparation_donnees.qmd >}}
+
+# Entraînement des algorithmes
+
+{{< include sections/3-algorithme.qmd >}}

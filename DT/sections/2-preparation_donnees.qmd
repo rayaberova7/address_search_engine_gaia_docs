@@ -87,7 +87,7 @@ Un masque du mont Baduel obtenu via le RIL (a) et celui obtenu à partir de la B
 :::
 
 
-![Découpage en ilots de Mayotte](img/decoupage_en_ilot_mayotte.png){#fig-decoupage_ilot width=100%}
+![Découpage en ilots de Mayotte](img/decoupage_en_ilot_mayotte.png){#fig-decoupage_ilot width=50%}
 
 
 Une piste de travail avortée faute de moyens avait été explorée et consistait à combiner le concept de logement délivré par le RIL et la précision des contours obtenus via la BDTOPO. Une labellisation manuelle pourrait également être envisagée pour améliorer la qualité des masques produits et se rapprocher au mieux du concept de logement mais celle-ci est très chronophage et il est très difficile d'anticiper les gains de performance qui seraient enregistrés en entraînant un algorithme sur ces masques obtenus manuellement. De plus, dans de nombreux cas, il n'est pas aisé de s'accorder visuellement (même au sein d'une petite équipe) sur ce qui est du logement ou non, c'est pourquoi des règles de décision strictes et couvrant l'ensemble des situations visualisables devraient être produites afin que ces travaux manuels d'annotation ne soient pas trop dépendants de l'interprétation de l'opérateur qui labelliserait à la main.

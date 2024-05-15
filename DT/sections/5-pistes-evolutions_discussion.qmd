@@ -1,0 +1,76 @@
+\section{Pistes et évolutions}
+
+On décrit ici l'ensemble des compétences mobilisées pour arriver au produit fini permettant de soutenir le travail de repérage des enquêteurs et d'appuyer les estimations de population de l'Insee. Un prototype de produit est disponible \href{https://cratt.kub.sspcloud.fr/kd/cartes/mayotte}{\textbf{ici}} sous forme d'application web.
+L'ensemble des besoins nécessaires au maintien du prototype existant ainsi qu'aux améliorations potentielles de l'outil sont discutés par la suite.
+
+\subsection{Stack technique et dette technique }
+
+On met en lumière ici l'ensemble des outils mobilisés et les compétences nécessaires à l'existence de ce projet, son maintien et ses futurs développements. En premier lieu, une expertise finie sur les bases de données de l'Insee (RIL et BDTOPO) est indispensable. La bonne compréhension des bases de données et des systèmes d'informations géographiques est capitale, pour manipuler les polygones de bâti, les coordonnées (x,y) des logements ainsi que les images dont les pixels sont géolocalisés. Les images ne faisant pas partie des données classiquement manipulées, il est également nécessaire de comprendre la structure de tels objets. En outre, le package python \href{https://github.com/InseeFrLab/astrovision}{astrovision} a été développé pour faciliter la manipulation des images et des masques associés.
+
+Des compétences de base en apprentissage statistique sont également de mise pour éviter de grossières erreurs de surapprentissage. S'ajoutent à ces dernières une compréhension un peu plus fine des algorithmes de \textit{deep learning} ainsi qu'une capacité à comprendre et reproduire les modèles présentés dans les articles de recherche les plus récents sur le sujet.
+
+Enfin, beaucoup d'efforts ont été réalisés pour capitaliser tous les entraînements, garantir leur reproductibilité et faciliter leur exécution. Cela nécessite une expertise poussée sur les outils de monitoring comme \href{https://mlflow.org/}{MLFlow} (cf. figure \ref{fig:mlflow}) ou les outils de programmation de tâches comme \href{https://argoproj.github.io/workflows/}{Argo-workflow}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.6 \textwidth]{images/MLFLOW_monitoring.png}
+    \caption{Monitoring et sauvegarde des modèles et conditions d'entraînement avec MLFlow}
+    \label{fig:mlflow}
+\end{figure}
+
+
+Au niveau de la gestion des données géographiques (images, polygones, contours administratifs), un \href{https://geoserver.org/}{geoserver} (cf. figure \ref{fig:geoserver}) a été mis en place afin de pouvoir servir dynamiquement les tuiles d'images, et les prédictions générées par les algorithmes sur plusieurs années et territoires.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6 \textwidth]{images/geoserver.png}
+      \captionsetup{justification=centering}
+    \caption{Interface du geoserver servant les images et les prédictions de l'algorithme à une application web}
+    \label{fig:geoserver}
+\end{figure}
+
+Enfin, une application web développée en React permet de mettre en évidence les résultats de l'algorithme et les travaux sur la différence des masques cités plus haut pour permettre une validation des agents en bureau, planifier l'enquête cartographique et de récupérer les statistiques d'évolution produites. Cette application est également très utile pour l'équipe projet afin d'évaluer en un coup d'oeil et à l'échelle de territoires entiers la pertinence de nos algorithmes. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.5 \textwidth]{images/CRATT.png}
+    \caption{Prise de vue de l'application web en cours de développement}
+    \label{fig:CRATT}
+\end{figure}
+
+L'ensemble des blocs techniques présentés ici cohabitent dans les serveurs du \textit{datalab.sspcloud} de l'Insee et leur branchement nécessite de maîtriser les déploiements d'application \textit{via} l'outil de gestion des conteneurs Kubernetes. Une forte dette technique s'est donc accumulée sur chacun des maillons de la chaîne de traitement et le seul maintien de l'ensemble nécessiterait déjà une équipe de plusieurs personnes à plein temps. Le diagramme de la figure \ref{fig:treatment_chain} récapitule l'ensemble des outils et compétences mobilisés sur le projet. L'équipe projet actuelle n'est pas à plein temps sur le sujet et le jeu des changements de postes conduira \textit{in fine} sous peu à sa dislocation. A ce jour, aucune division n'accueille physiquement ce projet à l'Insee.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width = 0.99 \textwidth ]{images/treatment_chain.png}
+\captionsetup{justification=centering}
+\caption{Représentation schématique de l'ensemble des éléments nécessaires à l'obtention du produit d'aide à la décision assisté par les prédictions de l'algorithme}
+\label{fig:treatment_chain}
+\end{figure}
+
+
+\subsection{Suite des travaux et besoins} 
+
+Les usages finaux des travaux présentés (estimations de population et planification de charge) dépendent entièrement de la qualité des prédictions réalisées par l'algorithme.
+De nombreuses directions sont possibles pour tenter d'améliorer ces prédictions, notamment au niveau des données d'entraînement. Actuellement, l'algorithme est seulement entraîné sur l'année 2022 et sur la Martinique et la Guadeloupe. Il est nécessaire de tester la capacité de généralisation de l'algorithme en réduisant ou élargissant, temporellement ou géographiquement, le jeu d'entraînement qui nourrit son apprentissage. 
+
+Les masques construits à partir des images satellites sont des masques de bâti, et non des masques de logements, ce qui implique que l'algorithme ne peut distinguer le logement du bâti.
+Des travaux de labellisation manuelle pourraient venir corriger les masques produits \textit{via} la BDTOPO en ce sens. Une telle opération est nécessairement coûteuse en moyens humains et il est difficile d'estimer le rapport entre ce coût et les gains qui seront enregistrés sur les prédictions. D'autres sources de données, hors Insee, pourraient être explorées pour constituer les masques telles qu'Open Street Map.
+
+Au niveau des images même, les possibilités sont multiples : d'autres sources d'imagerie satellites sont disponibles, telles que les images Sentinel 2 ou les images des satellites Spot. Ces sources présentent des résolutions spatiales plus faibles que les images PLEIADES mais leur résolution temporelle est plus élevée ce qui implique qu'on pourrait les utiliser pour réaliser des estimations provisoires en l'attente de l'obtention de la couverture complète PLEIADES. Des travaux sur l'imagerie Sentinel 2 sont présentés dans le rapport \cite{nabec2023} et montrent qu'on peut obtenir un niveau de prédiction du bâti très satisfaisant à partir de ces images de moins bonne résolution. Des sources d'images dites stéréoscopiques ajoutent  une donnée supplémentaire sur l'altitude du bâti visualisé et mériteraient également d'être expertisées.
+
+Les réflexions sur l'algorithme sélectionné est tout aussi importante. En effet, la littérature scientifique est foisonnante sur les modèles de \textit{Segmentation} et il est donc nécessaire de réaliser une veille technique permanente sur le sujet. Certains modèles peuvent en théorie s'adapter à des images de résolutions différentes. Ainsi, l'entraînement de ces algorithmes pourrait être gonflé par des  jeux d'images croisant de multiples sources, notamment par des jeux de données préannotés rendus disponibles par des travaux de recherche académique. %REF 
+
+Une veille sur les travaux académiques est donc indispensable pour enrichir les travaux, ainsi qu'une veille sur les pratiques des autres instituts sur l'utilisation de l'imagerie satellitaire. Les contacts avec l'Institut Géographique National devraient être également plus touffus dans la mesure où la constitution même de la BDTOPO réside dans des travaux sur l'imagerie aérienne. Enfin, des échanges plus fréquents avec des acteurs du monde académique, voire la mise en place de projets de recherche visant exclusivement à répondre aux cas d'usages mentionnés en introduction, profiteraient grandement à l'avancée du projet.\\
+
+Du point de vue opérationnel seulement, partant du principe que la méthode de constitution des données et le choix de l'algorithme sont arrêtés, l'intégration de l'outil dans le processus de production Insee n'est pas aisée. En amont déjà, l'obtention des images devrait être internalisée à l'Insee avec la création d'un service responsable de cette acquisition. De même, les temps moyens d'acquisition \textit{i.e} le décalage entre la date de commande de l'image satellite et son obtention effective devraient être mesurés afin de prendre la mesure du décalage potentiel entre la vérité du terrain et celle photographiée.
+
+Des entraînements devraient aussi être réalisés assez fréquemment afin d'actualiser l'algorithme avec de nouvelles données et améliorer ses capacités de prédiction. Ensuite, les résultats des algorithmes pourraient être expertisés par les agents en bureau qui vérifieraient la pertinence des prédictions en les superposant aux images dont elles sont issues, ce qui induit nécessairement une réorganisation du travail. Cette phase d'expertise permettrait également aux agents d'émettre des propositions d'amélioration de l'outil de mise à disposition des résultats.
+
+Toutes ces compétences et ces missions mises bout à bout, la somme des moyens nécessaires à l'évolution d'un tel projet dépasse largement les moyens qui lui sont actuellement alloués et une équipe à plein temps dédiée à ce projet permettrait de sanctuariser les outils et compétences nécessaires à son maintien puis à son développement. 
+
+
+
+
+
+

@@ -69,3 +69,7 @@ format:
 # Analyse et mise en forme des sorties
 
 {{< include sections/4-resultats.qmd >}}
+
+# Pistes et évolutions
+
+{{< include sections/5-pistes-evolutions_discussion.qmd >}}

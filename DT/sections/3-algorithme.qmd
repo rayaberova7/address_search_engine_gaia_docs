@@ -1,3 +1,4 @@
+{{< pagebreak >}}
 
 Nous allons dans cette partie aborder les concepts d'apprentissage profond (*deep learning*) et expliquer notre démarche et l'application de ces outils à nos problématiques précises. Néanmoins, pour la bonne compréhension du lecteur, des rappels seront faits sur l'état de l'art et les concepts sous-tendant les méthodes pertinentes dans le cadre de ce projet.
 
@@ -105,6 +106,7 @@ Pour évaluer les résultats de notre algorithme pendant l'entraînement, certai
 
 A l'issue de l'entraînement du modèle sélectionné, les prédictions de l'algorithme recouvrent les annotations du jeu de test à hauteur de 75%.
 
+{{< pagebreak >}}
 
 <!-- Condition de l'entraînement, taille du batch, nombre d'epochs
 MLFLOW pour le suivi et la sauvegarde

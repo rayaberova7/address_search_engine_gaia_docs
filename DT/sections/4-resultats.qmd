@@ -1,3 +1,5 @@
+{{< pagebreak >}}
+
 Les sorties du modèle sont donc contenues dans un masque de polygones représentant les logements à un moment donné. La @fig-predglobal2023 représente sur l'île de Mayotte les prédictions obtenues en 2023. En comparant cette image avec par exemple une carte des quartiers favorisés ou non de Mayotte (@fig-locaquartiers), produite par l'Insee en 2012, on remarque que les prédictions semblent correctes, du moins globalement : les zones construites et habitées sont mises en valeur sur la carte. Cette vision générale des sorties permet de justifier de la pertinence de l'analyse puisqu'on parvient, avec ce modèle de *deep learning*, à délimiter les zones construites visibles sur des images satellites.
 
 
@@ -104,7 +106,7 @@ Des formes longilignes apparaissent sur la carte et semblent dessiner le contour
 
 On cherche donc à trier les constructions restantes. On parle ici de constructions mais ce sont évidemment des "morceaux" de constructions, le résultat de la soustraction. Ainsi, la création par exemple d'un préau ou le rajout d'une citerne de rétention d'eau se manifeste dans ce résultat par un minuscule point visible sur la carte. Pour simplifier la lecture, on parle de construction mais il faut lire "polygone visible sur la carte résultant ou bien d'une extension négligeable d'un bâtiment déjà existant, ou bien du manque de précision du modèle et impliquant un brouillage des résultats pertinents pour l'analyse". 
 
-On se penche alors sur un indice de compacité. On remarque que les contours des bâtiments n'ont pas forcément l'aire la plus petite, mais qu'ils ont une forme caractéristique : ils sont particulièrement allongés. L'indice de compacité calcule un rapport entre le périmètre et la surface d'un polygone. Il varie donc entre 0 et 1. La valeur 0 est une ligne parfaitement allongée tandis que la valeur 1 correspond à un cercle parfait. On utilise l'indice de compacité de Gravelius (@bendjoudi_coefficient_2002) dont la formule est donnée par : 
+On se penche alors sur un indice de compacité. On remarque que les contours des bâtiments n'ont pas forcément l'aire la plus petite, mais qu'ils ont une forme caractéristique : ils sont particulièrement allongés. L'indice de compacité calcule un rapport entre le périmètre et la surface d'un polygone. Il varie donc entre 0 et 1. La valeur 0 est une ligne parfaitement allongée tandis que la valeur 1 correspond à un cercle parfait. On utilise l'indice de compacité de Gravelius @bendjoudi_coefficient_2002 dont la formule est donnée par : 
 
 $$
 \text{Indice de Compacite} = (4 * \pi * \text{Aire}) / (\text{Perimetre} ^2)
@@ -124,7 +126,6 @@ On peut donc finalement filtrer les résultats de cette soustraction et obtenir 
 Ces polygones "nettoyés" permettent maintenant de soutenir les chiffres du recensement à Mayotte notamment, en fournissant une base de données sur les logements, sur laquelle peut s'appuyer une estimation de la population et venir corroborer les chiffres produits par les enquêtes annuelles. Ils peuvent également diriger et soutenir les enquêteurs pour l'enquête cartographique.
 
 Néanmoins, en ce qui concerne cette deuxième tâche, les données peuvent être exploitées pour produire des statistiques et une visualisation cartographique par îlot par exemple. Ainsi, en mettant en évidence les zones géographiques qui évoluent le plus vite, en classant les îlots selon leur importance d'un appui cartographique, on peut apporter l'information la plus précise et la plus utile possible. Ce sont des travaux statistiques que nous sommes en mesure de faire. 
-
 
 
 <!-- % zoomer montrer des exemples avec des bruits et du coup expliquer nettoyage

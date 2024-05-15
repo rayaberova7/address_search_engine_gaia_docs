@@ -1,3 +1,5 @@
+{{< pagebreak >}}
+
 ## Les images satellites
 
 <!-- % PEut - être reprendre plus ce que judith avait écrit c'était du lourd -->
@@ -96,7 +98,6 @@ Une piste de travail avortée faute de moyens avait été explorée et consistai
 Cependant, pour valider la pertinence des algorithmes dont le processus d'entraînement est détaillé dans ce qui suit, un ensemble d'images jugé par l'équipe comme correctement labellisé à été constitué sur Mayotte. 
 
 On retiendra ici que les masques produits automatiquement en utilisant la BDTOPO ne se limitent pas au concept de logement mais à celui de bâti. Ceci est problématique puisqu'un algorithme entraîné sur ces masques ne pourra lui aussi que détecter du bâti. Des travaux futurs devront être menés pour construire des masques de logements.   
-
 
 <!-- % Faire un petit laius su rles bases de donénes déjà annotées peut être sur une autre partie (discussion ?) et leur potentialité si nos algorithmes sont assez généraux on pourrait s'en servir en base d'entrainement à voir
 %je crois que le szegformzer est sensé s'adapter à des échelles différentes, pas vraiemnt le cas en pratique%

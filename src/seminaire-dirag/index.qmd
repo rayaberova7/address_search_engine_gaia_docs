@@ -1,0 +1,24 @@
+---
+title: "Travaux exploratoires avec des données satellites : Bilan des résultats obtenus"
+subtitle: |
+  **[Raya Berova (DMRG), Gaëtan Carrère (SES - DR971), Thomas Faria (SSP Lab), Clément Guillo (SES - DR971), Tom Seimandi (SSP Lab)]{.orange}**
+date: "05/28/2024"
+date-format: "D MMMM YYYY"
+slide-number: true
+# uncomment for French presentations:
+lang: fr-FR
+# for blind readers:
+slide-tone: false
+chalkboard: # press the B key to toggle chalkboard
+  theme: whiteboard
+# uncomment to use the multiplex mode:
+# multiplex: true
+format:
+  onyxia-revealjs:
+    output-file: index.html
+controls: true
+css: ../custom.css
+ascii: true
+---
+
+{{< include sections/1-introduction.qmd >}}

@@ -1,0 +1,14 @@
+
+---
+title: Séminaire à la Dirag
+image: img/toad_guada.jpg
+date: last-modified
+description: |
+  <b>Description :</b> Ce séminaire marque la fin des travaux d’expérimentation. À cette occasion, nous présenterons l’intégralité de la chaîne de traitement, de la récupération des images jusqu’à l’application d’aide à la décision, en mettant l’accent sur les difficultés rencontrées. La poursuite de ces travaux dépendra des besoins réels de l’Insee et nécessitera des compétences variées et une technicité élevée pour maintenir et/ou améliorer la chaîne de traitement.
+author: Raya Berova, Gaëtan Carrere, Thomas Faria, Clément Guillo et Tom Seimandi
+slides:
+  text: pdf
+  url: src/seminaire-dirag/index.html
+order: 1
+lang: fr-FR
+---

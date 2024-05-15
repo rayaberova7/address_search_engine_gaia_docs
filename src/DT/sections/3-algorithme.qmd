@@ -1,5 +1,3 @@
-{{< pagebreak >}}
-
 Nous allons dans cette partie aborder les concepts d'apprentissage profond (*deep learning*) et expliquer notre démarche et l'application de ces outils à nos problématiques précises. Néanmoins, pour la bonne compréhension du lecteur, des rappels seront faits sur l'état de l'art et les concepts sous-tendant les méthodes pertinentes dans le cadre de ce projet.
 
 ## Les modèles de *deep learning*
@@ -17,13 +15,13 @@ Les réseaux de neurones convolutifs tirent leur inspiration du cortex visuel de
 1. Une première partie composée par des couches de convolutions successives qui permet d'extraire des prédicteurs de l'image en entrée du réseau;
 2. Une seconde partie permettant de classifier les pixels de l'image en entrée à partir des prédicteurs obtenus dans la première partie.
 
-![Réseau de neurones convolutif](img/CNN.png){#fig-CNN width=75%}
+![Réseau de neurones convolutif](../img/CNN.png){#fig-CNN width=75%}
 
 <!-- Note de lecture : La partie convolutive est représentée par les différents cubes à gauche et la partie classifiante est représentée par les rectangles fins et bleus à droite. -->
 
 Dans la partie convolutive, l'image en entrée du réseau se voit appliquer des filtres appelés convolutions, représentés par des matrices $A = (a_{ij})$ de petite taille appelés noyaux de convolution. L'image en sortie de l'opération de convolution est obtenue à partir de chaque pixel de l'image en entrée en calculant la somme des pixels avoisinant, pondérée par les coefficients $a_{ij}$ du noyau de convolution. Cette opération de convolution est illustrée dans la @fig-ex_conv, extraite de l'ouvrage @Kim_2017.
 
-![Exemple d'opération de convolution](img/conv.jpg){#fig-ex_conv width=50%}
+![Exemple d'opération de convolution](../img/conv.jpg){#fig-ex_conv width=50%}
 
 <!-- L'image résultante est une image plus petite dont les pixels sont égaux à la somme des pixels de l'image en entrée pondérée par les coefficients du noyau de convolution. -->
 
@@ -31,24 +29,24 @@ Une convolution résume donc l'information contenue dans l'image. Il est d'aille
 
 Un réseau de neurones convolutif est alors constitué de plusieurs couches. Les premières couches permettent de détecter des formes simples dans l'image (lignes horizontales, verticales, diagonales etc.) tandis que les couches suivantes, plus spécialisées, vont combiner les concepts simples appris par les couches précédentes et détecter des formes plus complexes, ce qui est schématisé dans la  @fig-Convolution.
 
-![Représentation d'une convolution](img/convolution.png){#fig-Convolution width=75%}
+![Représentation d'une convolution](../img/convolution.png){#fig-Convolution width=75%}
 
 <!-- Les premières couches convolutives reconnaissent les formes simples tandis que les couches les plus profondes à droite reconnaissent des formes plus concrètes. -->
 
 Des opérations dites de "max pooling" illustrées dans la @fig-Maxpool permettent de réduire la dimension des images obtenues entre chaque couche tout en restant proche de l'information extraite par convolution. Cette réduction de dimension permet de diminuer le nombre de calculs par couche et autorise la construction de réseaux avec un grand nombre de couches souvent plus performants. D'autres opérations telles que le padding détaillé dans la @fig-Padding permettent de contrôler la dimension de l'image en sortie.
 
-![Représentation du maxpool](img/maxpool.png){#fig-Maxpool width=40%}
+![Représentation du maxpool](../img/maxpool.png){#fig-Maxpool width=40%}
 
 <!-- L'image résultante de l'opération de max-pooling est égale au maximum de chaque pixel dans chacune des zones dessinées sur l'image de gauche. -->
 
 
-![Représentation du padding](img/padding.png){#fig-Padding width=40%}
+![Représentation du padding](../img/padding.png){#fig-Padding width=40%}
 
 <!-- Note de lecture : l'ajout d'une bande de 0 autour de l'image avant d'appliquer la convolution permet de limiter la réduction de dimension de l'image résultante -->
 
 Une fonction d'activation (concept proche de la neurobiologie) non linéaire de type ReLU (Rectifiar Linear Unit) est appliquée systématiquement après chaque couche (cf. @fig-ReLu). L'utilisation de fonctions non linéaires n'est pas réservée aux seuls réseaux de neurones convolutifs mais à l'ensemble des modèles de *deep learning*. Ces fonctions non linéaires vont permettre *in fine* de former des réseaux de neurones capables de prédire des phénomènes non linéaires. Ces réseaux s'adapteront mieux au traitement des images.
 
-![Fonction d'activation ReLu](img/relu-2.png){#fig-ReLu width=40%}
+![Fonction d'activation ReLu](../img/relu-2.png){#fig-ReLu width=40%}
 
 <!-- Note de lecture : la fonction ReLU "s'active" quand l'argument est positif. -->
 
@@ -83,7 +81,7 @@ Les deux parties (encodeur et décodeur) sont paramétrées et sont donc amélio
 Le U-net @Ronneberger_Fischer_Brox_2015b pousse cette logique un peu plus loin en allant jusqu'à connecter les couches de la partie contractante aux couches de la partie expansive. 
 La @fig-unet schématise la structure du U-net. D'autres architectures telles que présentées dans @chen2017rethinking reposent sur des formes de convolution spécifiques (*atrous convolution*) ayant pour but de minimiser l'effet résumant des opérations de *Max Pooling*. Ces structures sont très lourdes et plusieurs structures du même type mais allégées ont été produites par la suite.
 
-![Représentation schématique du Unet](img/Unet-remanie.png){#fig-unet width=75%}
+![Représentation schématique du Unet](../img/Unet-remanie.png){#fig-unet width=75%}
 
 
 Plus récemment, la construction des modèles de segmentation s'est beaucoup inspirée de celle des Large Language Model (par exemple chatGPT) dont l'efficacité n'est plus à démontrer. Par analogie avec les séquences de mots, si on considère que les images sont des séquences à deux dimensions alors on peut appliquer des structures de type "transformer" (cf. @vaswani2017attention) sur ces dernières. Ainsi, dans @dosovitskiy2021image les auteurs montrent qu'on peut entraîner un modèle de classification s'appuyant uniquement sur des transformers (en opposition aux réseaux de neurones convolutifs). Dans @xie2021segformer, les auteurs généralisent cette approche aux modèles de segmentation en utilisant un décodeur basé sur une structure de tranformer.
@@ -102,11 +100,9 @@ L'entraînement des algorithmes de *deep learning* se réalise par itérations s
 
 Pour évaluer les résultats de notre algorithme pendant l'entraînement, certaines zones de Mayotte correctement labellisées ont été sélectionnées. On calcul la moyenne de l'Intersection Over Union (IOU) obtenu sur le jeu de données considéré (cf. @fig-iou). L'IOU mesure la superposition des prédictions de l'algorithme aux annotations connues et est compris entre 0 (aucun recoupement) et 1 (superposition parfaite).
 
-![Intersection over union](img/IOUschema.png){#fig-iou width=50%}
+![Intersection over union](../img/IOUschema.png){#fig-iou width=50%}
 
 A l'issue de l'entraînement du modèle sélectionné, les prédictions de l'algorithme recouvrent les annotations du jeu de test à hauteur de 75%.
-
-{{< pagebreak >}}
 
 <!-- Condition de l'entraînement, taille du batch, nombre d'epochs
 MLFLOW pour le suivi et la sauvegarde

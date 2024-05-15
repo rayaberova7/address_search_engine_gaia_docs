@@ -1,5 +1,3 @@
-{{< pagebreak >}}
-
 ## Les images satellites
 
 <!-- % PEut - être reprendre plus ce que judith avait écrit c'était du lourd -->
@@ -11,9 +9,9 @@ Deux caractéristiques sont très importantes lorqu'on s'intéresse aux images s
 
 ::: {#fig-comp_resolution layout-ncol=2}
 
-![](img/pleiade.png){#fig-pleiade width=100%}
+![](../img/pleiade.png){#fig-pleiade width=100%}
 
-![](img/Sentinel2.png){#fig-sentinel2 width=100%}
+![](../img/Sentinel2.png){#fig-sentinel2 width=100%}
 
 Comparaison entre une image PLEIADES très haute résolution (a) et une image Sentinel 2 haute résolution (b)
 :::
@@ -26,9 +24,9 @@ La deuxième caractéristique est la résolution temporelle *i.e* la fréquence 
 
 ::: {#fig-comp_couverture_pleiade layout-ncol=2}
 
-![](img/pleiade_2020_full_mayotte.png){#fig-pleiade_2020_full_mayotte width=100%}
+![](../img/pleiade_2020_full_mayotte.png){#fig-pleiade_2020_full_mayotte width=100%}
 
-![](img/pleiade_2023_full_mayotte.png){#fig-pleiade_2023_full_mayotte width=100%}
+![](../img/pleiade_2023_full_mayotte.png){#fig-pleiade_2023_full_mayotte width=100%}
 
 Comparaison de la couverture de Mayotte par l'imagerie PLEIADES en 2020 (a) et en 2023 (b)
 :::
@@ -54,9 +52,9 @@ Cependant, la BDTOPO ne peut pas répondre aux cas d'usages mentionnés en intro
 
 ::: {#fig-maillage_tuiles layout-ncol=2}
 
-![Mayotte 2017](img/mayotte_2017.png){#fig-mayotte_2017 width=100%}
+![Mayotte 2017](../img/mayotte_2017.png){#fig-mayotte_2017 width=100%}
 
-![Mayotte 2020](img/mayotte_2020.png){#fig-mayotte_2020 width=100%}
+![Mayotte 2020](../img/mayotte_2020.png){#fig-mayotte_2020 width=100%}
 
 Représentation de la couverture par image sous forme de tuiles
 :::
@@ -69,9 +67,9 @@ Cependant les logements se voient attribuer un seul et unique point par l'enquê
 
 ::: {#fig-masque_RIL_BDTOPO layout-ncol=2}
 
-![](img/masqueRIL.png){#fig-masqueRIL width=100%}
+![](../img/masqueRIL.png){#fig-masqueRIL width=100%}
 
-![](img/masqueBDTOPO.png){#fig-masqueBDTOPO width=100%}
+![](../img/masqueBDTOPO.png){#fig-masqueBDTOPO width=100%}
 
 Masque de logements produit à partir du RIL (a) et à partir de la BDTOPO (b)
 :::
@@ -81,15 +79,15 @@ Le RIL n'étant disponible que pour un cinquième du territoire, la constitution
 
 ::: {#fig-montBaduel layout-ncol=2}
 
-![](img/mont_baduel_ril_bdtopo.png){#fig-mont_baduel_ril_bdtopo width=100%}
+![](../img/mont_baduel_ril_bdtopo.png){#fig-mont_baduel_ril_bdtopo width=100%}
 
-![](img/mont_baduel_bdtopo.png){#fig-mont_baduel_bdtopo width=100%}
+![](../img/mont_baduel_bdtopo.png){#fig-mont_baduel_bdtopo width=100%}
 
 Un masque du mont Baduel obtenu via le RIL (a) et celui obtenu à partir de la BDTOPO (b)
 :::
 
 
-![Découpage en ilots de Mayotte](img/decoupage_en_ilot_mayotte.png){#fig-decoupage_ilot width=50%}
+![Découpage en ilots de Mayotte](../img/decoupage_en_ilot_mayotte.png){#fig-decoupage_ilot width=50%}
 
 
 Une piste de travail avortée faute de moyens avait été explorée et consistait à combiner le concept de logement délivré par le RIL et la précision des contours obtenus via la BDTOPO. Une labellisation manuelle pourrait également être envisagée pour améliorer la qualité des masques produits et se rapprocher au mieux du concept de logement mais celle-ci est très chronophage et il est très difficile d'anticiper les gains de performance qui seraient enregistrés en entraînant un algorithme sur ces masques obtenus manuellement. De plus, dans de nombreux cas, il n'est pas aisé de s'accorder visuellement (même au sein d'une petite équipe) sur ce qui est du logement ou non, c'est pourquoi des règles de décision strictes et couvrant l'ensemble des situations visualisables devraient être produites afin que ces travaux manuels d'annotation ne soient pas trop dépendants de l'interprétation de l'opérateur qui labelliserait à la main.

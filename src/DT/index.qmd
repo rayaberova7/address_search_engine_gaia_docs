@@ -77,17 +77,25 @@ Ce projet mobilise des compétences variées et sa complexité demande une forma
 
 {{< include sections/1-introduction.qmd >}}
 
+{{< pagebreak >}}
+
 # Préparation des données 
 
 {{< include sections/2-preparation_donnees.qmd >}}
+
+{{< pagebreak >}}
 
 # Entraînement des algorithmes
 
 {{< include sections/3-algorithme.qmd >}}
 
+{{< pagebreak >}}
+
 # Analyse et mise en forme des sorties
 
 {{< include sections/4-resultats.qmd >}}
+
+{{< pagebreak >}}
 
 # Pistes et évolutions
 

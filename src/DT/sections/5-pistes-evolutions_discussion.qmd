@@ -1,5 +1,3 @@
-{{< pagebreak >}}
-
 On décrit ici l'ensemble des compétences mobilisées pour arriver au produit fini permettant de soutenir le travail de repérage des enquêteurs et d'appuyer les estimations de population de l'Insee. Un prototype de produit est disponible [**ici**](https://cratt.kub.sspcloud.fr/kd/cartes/mayotte) sous forme d'application web.
 L'ensemble des besoins nécessaires au maintien du prototype existant ainsi qu'aux améliorations potentielles de l'outil sont discutés par la suite.
 
@@ -11,19 +9,19 @@ Des compétences de base en apprentissage statistique sont également de mise po
 
 Enfin, beaucoup d'efforts ont été réalisés pour capitaliser tous les entraînements, garantir leur reproductibilité et faciliter leur exécution. Cela nécessite une expertise poussée sur les outils de monitoring comme [MLFlow](https://mlflow.org/) (cf. @fig-mlflow) ou les outils de programmation de tâches comme [Argo-workflow](https://argoproj.github.io/workflows/). 
 
-![Monitoring et sauvegarde des modèles et conditions d'entraînement avec MLFlow](img/MLFLOW_monitoring.png){#fig-mlflow width=60%}
+![Monitoring et sauvegarde des modèles et conditions d'entraînement avec MLFlow](../img/MLFLOW_monitoring.png){#fig-mlflow width=60%}
 
 Au niveau de la gestion des données géographiques (images, polygones, contours administratifs), un [geoserver](https://geoserver.org/) (cf. @fig-geoserver) a été mis en place afin de pouvoir servir dynamiquement les tuiles d'images, et les prédictions générées par les algorithmes sur plusieurs années et territoires.
 
-![Interface du geoserver servant les images et les prédictions de l'algorithme à une application web](img/geoserver.png){#fig-geoserver width=60%}
+![Interface du geoserver servant les images et les prédictions de l'algorithme à une application web](../img/geoserver.png){#fig-geoserver width=60%}
 
 Enfin, une application web développée en React permet de mettre en évidence les résultats de l'algorithme et les travaux sur la différence des masques cités plus haut pour permettre une validation des agents en bureau, planifier l'enquête cartographique et de récupérer les statistiques d'évolution produites. Cette application est également très utile pour l'équipe projet afin d'évaluer en un coup d'oeil et à l'échelle de territoires entiers la pertinence de nos algorithmes. 
 
-![Prise de vue de l'application web en cours de développement](img/CRATT.png){#fig-CRATT width=60%}
+![Prise de vue de l'application web en cours de développement](../img/CRATT.png){#fig-CRATT width=60%}
 
 L'ensemble des blocs techniques présentés ici cohabitent dans les serveurs du *datalab.sspcloud* de l'Insee et leur branchement nécessite de maîtriser les déploiements d'application *via* l'outil de gestion des conteneurs Kubernetes. Une forte dette technique s'est donc accumulée sur chacun des maillons de la chaîne de traitement et le seul maintien de l'ensemble nécessiterait déjà une équipe de plusieurs personnes à plein temps. Le diagramme de la figure @fig-treatment_chain récapitule l'ensemble des outils et compétences mobilisés sur le projet. L'équipe projet actuelle n'est pas à plein temps sur le sujet et le jeu des changements de postes conduira *in fine* sous peu à sa dislocation. A ce jour, aucune division n'accueille physiquement ce projet à l'Insee.
 
-![Représentation schématique de l'ensemble des éléments nécessaires à l'obtention du produit d'aide à la décision assisté par les prédictions de l'algorithme](img/treatment_chain.png){#fig-treatment_chain width=100%}
+![Représentation schématique de l'ensemble des éléments nécessaires à l'obtention du produit d'aide à la décision assisté par les prédictions de l'algorithme](../img/treatment_chain.png){#fig-treatment_chain width=100%}
 
 
 ## Suite des travaux et besoins

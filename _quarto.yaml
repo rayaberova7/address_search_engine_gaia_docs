@@ -1,13 +1,13 @@
 project:
   type: website
   render:
-    - /DT/*.qmd
+    - /src/**/index.qmd
     - index.qmd
     - /cards/*.qmd
 
 website:
   page-navigation: true
-  title: "coucou"
+  title: "Projet Données Satellites"
   site-url: "https://github.com/orgs/InseeFrLab/teams/satellite-images/repositories"
 
   repo-url: "https://github.com/orgs/InseeFrLab/teams/satellite-images/repositories"

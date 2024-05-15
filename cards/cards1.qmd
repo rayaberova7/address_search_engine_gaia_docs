@@ -1,13 +1,14 @@
 
 ---
-title: Séminaire DMS
-image: https://upload.wikimedia.org/wikipedia/fr/thumb/1/10/Logo_Insee.svg/1200px-Logo_Insee.svg.png
-date: "2023-09-01"
+title: Document de travail
+image: img/toad_DT.jpg
+date: last-modified
 description: |
-  <b>Description :</b> Séminaire interne du département des méthodes statistiques de l'Insee
-author: Thomas Faria et Tom Seimandi
+  <b>Description :</b> Document retraçant les avancées et résultats obtenus sur les travaux exploratoires utilisant des images satellitaires
+author: Raya Berova, Gaëtan Carrere, Thomas Faria, Clément Guillo et Tom Seimandi
 slides:
-  text: Slides
-  url: /DT/index.pdf
+  text: pdf
+  url: src/DT/index.pdf
 order: 1
+lang: fr-FR
 ---

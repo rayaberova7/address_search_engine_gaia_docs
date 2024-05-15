@@ -1,6 +1,3 @@
-
-{{< pagebreak >}}
-
 # Contexte
 
 ## L'enquête cartographique et le recensement de la population
@@ -29,7 +26,7 @@ La comparaison de l’évolution de ces indicateurs de densité obtenus grâce a
 
 Schématiquement, on veut être en mesure de détecter automatiquement des changements à partir de prises de vue d'un même territoire à deux dates différentes. Pour ce faire, on entraîne un algorithme capable *in fine de produire des masques de logements à partir d'une image donnée, c'est-à-dire une couche de polygones représentant les bâtiments habités sur une carte. En analysant les différences entre deux masques de logements produits pour un même territoire à deux moments distincts, on peut essayer d'en déduire les mouvements principaux entre ces deux dates, notamment les créations et destructions de logements. C'est ce que montre le schéma exposé @fig-strategie. La mesure de ces évolutions peut alors permettre de prolonger les estimations de population passées réalisées par l'Insee et permet aussi de repérer les zones sur lesquelles l'enquête cartographique devra se concentrer.
 
-![Stratégie d'utilisation des algorithmes](img/stratégie_segmentation.png){#fig-strategie width=100%}
+![Stratégie d'utilisation des algorithmes](../img/stratégie_segmentation.png){#fig-strategie width=100%}
 
 L'entraînement de ces algorithmes de repérage des logements nécessite la constitution d'un grand nombre de couples $(images, masques)$ où : 
 
@@ -43,6 +40,4 @@ Ainsi, le projet tel qu'il existe aujourd'hui peut être décomposé en plusieur
 - La dernière chaîne de traitement consiste en l'analyse des prédictions réalisées par l'algorithme et la mise à disposition des résultats visuels et statistiques pour les enquêteurs et les agents de l'Insee souhaitant comparer ces prédictions aux chiffres de population établis par l'Insee lors du recensement de la population.
 
 
-![Articulation des parties du projet](img/Pipeline.png){#fig-chaîne_traitement width=100%}
-
-{{< pagebreak >}}
+![Articulation des parties du projet](../img/Pipeline.png){#fig-chaîne_traitement width=100%}

@@ -1,13 +1,11 @@
-{{< pagebreak >}}
-
 Les sorties du modèle sont donc contenues dans un masque de polygones représentant les logements à un moment donné. La @fig-predglobal2023 représente sur l'île de Mayotte les prédictions obtenues en 2023. En comparant cette image avec par exemple une carte des quartiers favorisés ou non de Mayotte (@fig-locaquartiers), produite par l'Insee en 2012, on remarque que les prédictions semblent correctes, du moins globalement : les zones construites et habitées sont mises en valeur sur la carte. Cette vision générale des sorties permet de justifier de la pertinence de l'analyse puisqu'on parvient, avec ce modèle de *deep learning*, à délimiter les zones construites visibles sur des images satellites.
 
 
 ::: {#fig-pred-quartier layout-ncol=2}
 
-![Prédictions originales 2023 de Mayotte](img/pred_2023_mayotte.png){#fig-predglobal2023 width=100%}
+![Prédictions originales 2023 de Mayotte](../img/pred_2023_mayotte.png){#fig-predglobal2023 width=100%}
 
-![Localisation des quartiers à Mayotte (Insee 2012)](img/quartiersmayotte.png){#fig-locaquartiers width=100%}
+![Localisation des quartiers à Mayotte (Insee 2012)](../img/quartiersmayotte.png){#fig-locaquartiers width=100%}
 
 :::
 
@@ -18,7 +16,7 @@ Les sorties du modèle sont donc contenues dans un masque de polygones représen
 
 Le coeur du sujet réside dans l'évolution du bâti, et non simplement sa localisation, ce que la @fig-etalement montre en jaune. Encore une fois, cette visualisation montre la pertinence des prédictions : il est normal d'observer des nouveaux bâtiments en 2023 en périphérie des bâtiments déjà construits en 2020, résultant de l'étalement urbain de l'île. 
 
-![Observation de l'étalement du bâti à Mayotte entre 2020 et 2023](img/pred_2020_creation_mayotte.png){#fig-etalement width=50%}
+![Observation de l'étalement du bâti à Mayotte entre 2020 et 2023](../img/pred_2020_creation_mayotte.png){#fig-etalement width=50%}
 
 
 Si on se concentre sur des zones plus spécifiques, c'est-à-dire en zoomant sur la représentation cartographique des polygones, on observe qu'on est effectivement capables de dessiner automatiquement les logements. L'exemple ci-dessous (@fig-pred2023img2020et2023) présente les prédictions faites sur les images datant de 2023. Les polygones appliqués sur les images 2020 apparaissent à des endroits qui ne sont pas construits. Ils correspondent néanmoins à des constructions qui ont été faites entre ces deux années, comme le montre le fond d'image de 2023. Le modèle entraîné est donc capable de discerner le contour d'un logement et de le faire apparaître.
@@ -26,9 +24,9 @@ Si on se concentre sur des zones plus spécifiques, c'est-à-dire en zoomant sur
 
 ::: {#fig-pred2023img2020et2023 layout-ncol=2}
 
-![](img/pleiade_2020_creation_2023.png){#fig-pleiade_2020_creation_2023 width=100%}
+![](../img/pleiade_2020_creation_2023.png){#fig-pleiade_2020_creation_2023 width=100%}
 
-![](img/pleiade_2023_creation_2023.png){#fig-pleiade_2023_creation_2023 width=100%}
+![](../img/pleiade_2023_creation_2023.png){#fig-pleiade_2023_creation_2023 width=100%}
 
 Prédictions 2023 sur fond d'image 2020 (a) et sur fond d'image 2023 (b)
 :::
@@ -49,9 +47,9 @@ On travaille donc dans un premier temps sur le traitement des polygones de bâti
 
 ::: {#fig-pred2023init layout-ncol=2}
 
-![](img/pred2023init.png){#fig-pred2023init width=100%}
+![](../img/pred2023init.png){#fig-pred2023init width=100%}
 
-![](img/pred2023initmap.png){#fig-pred2023initmap width=100%}
+![](../img/pred2023initmap.png){#fig-pred2023initmap width=100%}
 
 Prédictions originales 2023 d'une zone de Mayotte
 :::
@@ -70,7 +68,7 @@ Pour un buffer positif, la forme du polygone initial va être étendue vers l'ex
 
 Voici un exemple (@fig-buffer_demo) sur des formes simples avec un buffer positif, issu de la documentation du package GeoPandas. En modifiant le paramètre de résolution, on obtient un lissage plus ou moins important. L'objectif ici est d'obtenir un lissage le plus important possible, pour avoir des formes géométriques plus simples et faciliter ainsi l'analyse des formes. On conserve donc la résolution par défaut. 
 
-![Exemple de buffer avec deux différentes résolutions](img/bufferdemo.png){#fig-buffer_demo width=50%}
+![Exemple de buffer avec deux différentes résolutions](../img/bufferdemo.png){#fig-buffer_demo width=50%}
 
 
 Le traitement des polygones passe ainsi par une fonction en trois étapes distinctes : 
@@ -81,7 +79,7 @@ Le traitement des polygones passe ainsi par une fonction en trois étapes distin
 
 L'agrandissement des polygones par le buffer positif permet de créer des intersections entre les polygones les plus proches, notamment les polygones séparés par les frontières entre les images satellites. La première problématique est donc corrigée par la fusion des polygones qui présentent une intersection et correspondent ainsi à un même bâtiment ou groupe de bâtiments. Cette succession de traitements permet également de lisser et simplifier les polygones, grâce notamment aux propriétés de lissage et d'arrondissement du buffering permettant de corriger les aspérités, de faire disparaître les petits "trous" dans les polygones et les imperfections les plus légères. De même, la fusion après un agrandissement permet de ne pas laisser apparaître les séparations les plus petites entre les bâtiments, et les considérer comme un seul et même bloc simplifie grandement la lecture et l'utilisation des résultats. On obtient, après ce traitement, une visualisation comme suit (@fig-predavecbuffer). 
 
-![Prédictions après application de la fonction de lissage](img/predavecbuffer.png){#fig-predavecbuffer width=50%}
+![Prédictions après application de la fonction de lissage](../img/predavecbuffer.png){#fig-predavecbuffer width=50%}
 
 
 Le troisième problème concerne la taille des polygones tracés sur la carte. En effet, certains d'entre eux sont trop petits pour correspondre à des habitations et correspondent plutôt à du "bruit". Il peut donc être nécessaire de mettre en place un seuil de surface en-dessous duquel on considère le polygone comme inintéressant. Il faut néanmoins être prudent. Certes, un logement est considéré comment décent par la loi française à partir de 9m² habitables mais environ 30% de la population à Mayotte n'a pas accès à l'eau courante par exemple, ce qui témoigne de l'aspect précaire d'une partie des habitations de l'île. Des bidonvilles par exemple sont susceptibles de contenir des habitations plus petites que la taille légale des bâtiments. 
@@ -96,7 +94,7 @@ On tente ensuite d'observer l'évolution du bâti par îlot en mettant en consid
 
 Pour mettre en lumière les créations et les suppressions, nous avons donc pris l'ensemble de la surface construite en 2020 et/ou en 2023 à laquelle nous avons soustrait la surface conservée. On obtient donc une liste de polygones qui sont présents soit en 2020, soit en 2023, mais pas les deux. Par construction, les surfaces restantes représentent des évolutions des constructions.
 
-![Soustraction des bâtiments sur les deux années d'étude sur une zone de Mayotte](img/creationssuppressions.png){#fig-creationssuppressions width=75%}
+![Soustraction des bâtiments sur les deux années d'étude sur une zone de Mayotte](../img/creationssuppressions.png){#fig-creationssuppressions width=75%}
 
 
 La @fig-creationssuppressions donne le résultat de cette opération pour un îlot.  On a en rouge les créations et en bleu les suppressions déduites des prédictions 2020 et 2023 de l'algorithme.
@@ -114,14 +112,14 @@ $$
 
 Avant de filtrer les polygones, il faut déterminer un seuil. On choisit ici un seuil de $0,1$. Cette décision n'est pas simple, et a été approchée à tâtons, en observant progressivement l'état des polygones affichés sur la carte, et en comparant visuellement et manuellement aux images de 2020 et 2023. On calcule de plus la somme de la surface des polygones représentés en fonction du seuil choisi (@fig-evolcompa).
 
-![Evolution de la surface représentée en fonction du seuil choisi](img/evolcompa.png){#fig-evolcompa width=75%}
+![Evolution de la surface représentée en fonction du seuil choisi](../img/evolcompa.png){#fig-evolcompa width=75%}
 
 
 Les résultats sont assez logiques : plus le seuil est élevé et moins les bâtiments s'affichent sur la carte. A partir d'une certaine valeur (environ 0,7), toutes les constructions sont supprimées et la carte est vide. Néanmoins, cette visualisation est assez décevante, car il est difficile d'en extraire une règle de décision pour choisir la valeur du seuil. On remarque toutefois une sorte de marche autour de la valeur $0,1$, ce qui vient appuyer nos observations manuelles. 
  
 On peut donc finalement filtrer les résultats de cette soustraction et obtenir la visualisation suivante (@fig-creationssuppressionsfiltre) des modifications réelles de l'état du bâti, qui correspond précisément aux objectifs du projet.
 
-![Evolution filtrée du bâti entre 2020 et 2023 d'une zone de Mayotte](img/creationssuppressionsfiltre.png){#fig-creationssuppressionsfiltre width=75%}
+![Evolution filtrée du bâti entre 2020 et 2023 d'une zone de Mayotte](../img/creationssuppressionsfiltre.png){#fig-creationssuppressionsfiltre width=75%}
 
 Ces polygones "nettoyés" permettent maintenant de soutenir les chiffres du recensement à Mayotte notamment, en fournissant une base de données sur les logements, sur laquelle peut s'appuyer une estimation de la population et venir corroborer les chiffres produits par les enquêtes annuelles. Ils peuvent également diriger et soutenir les enquêteurs pour l'enquête cartographique.
 

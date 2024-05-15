@@ -1,0 +1,6 @@
+/.quarto/
+/_site/
+*background.svg
+*logo.svg
+*favicon-32x32.png
+*.csv

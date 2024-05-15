@@ -1,0 +1,16 @@
+---
+listing:
+  id: presentations
+  contents: cards
+  sort: "order asc"
+  categories: false
+  template: style/listing-grid.ejs
+page-layout: full
+toc: false
+---
+
+## Documents relatifs au projet sur les données satellite à l'Insee
+
+
+::: {#presentations}
+:::

@@ -1,0 +1,49 @@
+project:
+  type: website
+  render:
+    - /DT/*.qmd
+    - index.qmd
+    - /cards/*.qmd
+
+website:
+  page-navigation: true
+  title: "coucou"
+  site-url: "https://github.com/orgs/InseeFrLab/teams/satellite-images/repositories"
+
+  repo-url: "https://github.com/orgs/InseeFrLab/teams/satellite-images/repositories"
+
+  open-graph: true
+
+  page-footer:
+    left: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
+    right:
+    - text: "License"
+      href: LICENSE
+
+  navbar:
+    logo: https://upload.wikimedia.org/wikipedia/fr/thumb/1/10/Logo_Insee.svg/1200px-Logo_Insee.svg.png
+    align: center
+    title: false
+    collapse-below: lg
+
+    right:
+      - icon: github
+        href: "https://github.com/orgs/InseeFrLab/teams/satellite-images/repositories"
+        aria-label: GitHub
+
+    left:
+      - href: index.qmd
+        text: Accueil
+
+format:
+  html:
+    theme:
+      light: [cosmo, style/styles.scss]
+      dark: [cyborg, style/styles.scss]
+    reference-location: margin
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    include-in-header: "style/fontawesome.html"
+    header-includes: |
+        <link rel="icon" type="image/png" sizes="32x32" href="slides/_extensions/InseeFrLab/onyxia/favicon-32x32.png">

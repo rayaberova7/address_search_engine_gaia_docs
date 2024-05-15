@@ -1,0 +1,62 @@
+---
+title: "Usage de l'imagerie Satellitaire et des algorithmes de Deep Learning au service du Recensement de la population dans les DOM"
+author:
+    - name: Raya Berova
+      email: raya.berova@insee.fr
+      affiliations: 
+          - id: Insee
+            name: Institut national de la statistique et des études économiques
+            department: DMRG
+            city: Montrouge
+            postal-code: 92541
+    - name: Gaëtan Carrere
+      email: gaetan.carrere@insee.fr
+      affiliations: 
+          - id: Insee
+            name: Institut national de la statistique et des études économiques
+            department: Dirag
+            city: Pointe à Pitre
+            postal-code: 971
+    - name: Thomas Faria
+      email: thomas.faria@insee.fr
+      affiliations:
+          - id: Insee
+            name: Institut national de la statistique et des études économiques
+            department: SSP Lab
+            city: Montrouge
+            postal-code: 92541
+    - name: Clément Guillo
+      email: clement.guillo@insee.fr
+      affiliations: 
+          - id: Insee
+            name: Institut national de la statistique et des études économiques
+            department: Dirag
+            city: Pointe à Pitre
+            postal-code: 971
+    - name: Tom Seimandi
+      email: tom.seimandi@insee.fr
+      affiliations: 
+          - id: Insee
+            name: Institut national de la statistique et des études économiques
+            department: SSP Lab
+            city: Montrouge
+            postal-code: 92541
+date: last-modified
+
+format:
+  typst:
+    toc: true
+    section-numbering: 1.1.a
+    columns: 1
+    keep-typ: true
+    bibliography: biblio.bib
+    bibliographystyle: apa
+---
+
+# Introduction
+
+{{< include sections/1-introduction.qmd >}}
+
+## Acknowledgments {.appendix}
+
+{{< include sections/A-appendix.qmd >}}

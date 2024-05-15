@@ -1,0 +1,13 @@
+
+---
+title: Application web
+image: img/toad_cratt.jpeg
+date: last-modified
+description: |
+  <b>Description :</b> Application web à destination des agents facilitant l'utilisation des résultats fournit par le modèle de segmentation.
+slides:
+  text: pdf
+  url: https://cratt.kub.sspcloud.fr/
+order: 3
+lang: fr-FR
+---

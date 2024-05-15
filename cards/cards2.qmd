@@ -9,6 +9,6 @@ author: Raya Berova, Gaëtan Carrere, Thomas Faria, Clément Guillo et Tom Seima
 slides:
   text: pdf
   url: src/seminaire-dirag/index.html
-order: 1
+order: 2
 lang: fr-FR
 ---

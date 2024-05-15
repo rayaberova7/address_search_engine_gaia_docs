@@ -1,0 +1,112 @@
+## Les images satellites
+
+<!-- % PEut - être reprendre plus ce que judith avait écrit c'était du lourd -->
+
+Plusieurs sources de données d'images ont été envisagées pour ces travaux. En imagerie satellite, une distinction est faite entre les données de haute résolution et les données de très haute résolution. Dans ce qui suit, on se concentrera sur des données PLEIADES de très haute résolution. Ces données sont produites par la compagnie Airbus et sont récupérées et concaténées par l'Institut Géographique National (IGN). Ainsi, cet organisme nous fournit chaque année une couverture intégrale des territoires antillais.  
+
+Deux caractéristiques sont très importantes lorqu'on s'intéresse aux images satellites. La première est la résolution spatiale, c'est-à-dire la surface couverte par un pixel : plus la résolution spatiale est élevée, plus la surface couverte par un pixel est faible. Pour les données PLEIADES, la résolution spatiale est de 0.5m. Les images PLEIADES récupérées sont dites panchromatiques : ce sont des images en niveau de gris de très haute résolution et des couches RGB avec une résolution supérieure sont également disponibles. Une extrapolation spatiale est réalisée par la suite pour construire une image RGB à une résolution 50 cm. A titre comparatif la résolution spatiale des images Sentinel 2 est de 10 m, donc 20 fois plus faible (voir @fig-comp_resolution).
+
+
+::: {#fig-comp_resolution layout-ncol=2}
+
+![](img/pleiade.png){#fig-pleiade width=100%}
+
+![](img/Sentinel2.png){#fig-sentinel2 width=100%}
+
+Comparaison entre une image PLEIADES très haute résolution (a) et une image Sentinel 2 haute résolution (b)
+:::
+
+
+La deuxième caractéristique est la résolution temporelle *i.e* la fréquence à laquelle on peut obtenir une photographie du sol d'une zone donnée. La résolution temporelle correspond  au nombre de passages qu'un satellite réalise au-dessus d'un territoire donné sur une échelle de temps donnée. Plus cette dernière est élevée, plus les images à disposition seront récentes et de fait pertinentes au regard du cas d'usage souhaité. Les imageries obtenues le sont *via* des mesures optiques, ce qui implique qu'une couverture nuageuse trop élevée lors de la prise de vue satellite retardera l'acquisition pour le territoire concerné. Les territoires des DOM sont sujets à des saisons des pluies étalées et par conséquent sont très souvent couverts. En moyenne, huit mois sont donc nécessaires pour avoir une acquisition complète sans nuage de ces territoires par prise de vue satellites PLEIADES, ce qui induit un écart entre la réalité du terrain et celle photographiée par les satellites. La @fig-comp_couverture_pleiade présente la couverture totale de Mayotte en 2020 et en 2023 par les images PLEIADES sur lesquelles nous nous concentrerons par la suite.
+
+<!-- Pour être tout à fait juste avec  les travaux de Judith il faudra intégrer dans ce document les travaux sur Sentinel 2 réalisés par Judith elle avait obtenu des bons résultats, -->
+
+
+::: {#fig-comp_couverture_pleiade layout-ncol=2}
+
+![](img/pleiade_2020_full_mayotte.png){#fig-pleiade_2020_full_mayotte width=100%}
+
+![](img/pleiade_2023_full_mayotte.png){#fig-pleiade_2023_full_mayotte width=100%}
+
+Comparaison de la couverture de Mayotte par l'imagerie PLEIADES en 2020 (a) et en 2023 (b)
+:::
+
+
+
+<!-- % Parler quelque part dans la discussion peut etre de la nécessité du processus d'acquisition des images -->
+
+## Les annotations
+
+<!-- % je ne sais pas i il faut dire DOms Tom, Droms etc.. il faut qu'on s'accorde une bonne fois pour toute et qu'on reste cohérent
+% Pareil n'hésite pas à reprendre ajouter etc.. -->
+
+L'objectif ici est de constituer, à partir d'un ensemble d'images couvrant les territoires des DOM, les masques de logement associés aux images. Il est utile de noter ici que la labellisation manuelle serait la meilleure solution du point de vue de la qualité des masques générés, puisque le décalage entre la date de constitution des bases servant à annoter les images et la date de prise de vue engendrera nécessairement des masques imparfaitement synchronisés avec les images.
+
+Le coût d'une telle labellisation réalisée manuellement est prohibitif au regard de la taille de l'équipe projet et du temps de travail disponible, c'est pourquoi une labellisation automatique à été réalisée à partir de la base de données topographique de l'IGN (BDTOPO). Cette base localise précisément chaque année le contour du bâti avec des polygones et est obtenue par la combinaison de traitements sur photographies aériennes et d'annotations réalisées à la main par des agents de l'IGN. 
+
+Cependant, la BDTOPO ne peut pas répondre aux cas d'usages mentionnés en introduction, ceci pour les raisons suivantes : 
+
+- La BTOPO millésimée produite une année donnée se veut représenter l'étalement du bâti une année donnée. Or des polygones de contour de bâti une année donnée peuvent apparaître entre deux versions différentes sans que cette évolution de la BDTOPO soit rattachée à une réelle création : cette situation peut être rencontrée si les méthodes de détection des logements de l'IGN s'affinent d'une année sur l'autre et qu'un logement construit auparavant finit par être détecté.
+- Un territoire donné est couvert par des tuiles d'images satellites obtenues au fur et à mesure des passages du satellite au-dessus des territoires et dépendent de la couverture nuageuse et de l'inclinaison des radars optiques. Elles vont donc être obtenues à des moments différents de l'année. De fait, la représentation d'un territoire par imagerie satellitaire est une mosaïque d'images obtenues à des instants différents. Il est donc difficilement envisageable que la BDTOPO coïncide parfaitement avec ces images. Elle ne peut donc pas être utilisée telle quelle. Ce découpage est mis en exergue dans la @fig-maillage_tuiles.
+- L'actualisation de la BDTOPO par l'IGN n'est pas garantie et l'Insee doit donc internaliser ce processus de détection de bâti.
+
+::: {#fig-maillage_tuiles layout-ncol=2}
+
+![Mayotte 2017](img/mayotte_2017.png){#fig-mayotte_2017 width=100%}
+
+![Mayotte 2020](img/mayotte_2020.png){#fig-mayotte_2020 width=100%}
+
+Représentation de la couverture par image sous forme de tuiles
+:::
+
+<!-- % je  me demande si il ne faut pas présenter le recensement de la population quelque part pour le papier% -->
+
+Le répertoire des immeubles localisés (RIL) essentiellement constitué de la concaténation des enquêtes cartographiques des années précédentes répond à plusieurs des critiques adressées à la BDTOPO. En effet, le RIL est alimenté chaque année par l'enquête cartographique, durant laquelle les enquêteurs relèvent les créations ou suppressions de logements et précise éventuellement la localisation des logements déjà existants. Ce travail est réalisé pour 1/5ème des logements du territoire, ce cinquième correspondant aux logements qui seront recensés par la suite pour l'enquête annuelle de recensement de l'année donnée. L'enquête cartographique est réalisée chaque année entre mai et août ce qui facilite la datation du RIL dans la mesure où ce travail de collecte des positions des logements est correctement réalisé.
+
+Cependant les logements se voient attribuer un seul et unique point par l'enquêteur (celui de la porte d'entrée quand c'est possible) ce qui ne peut égaler la précision des contours fournis par l'IGN. Pour approximer le concept de surface de logement, il faut alors calculer des buffers autour de ces points. Une comparaison entre un masque produit *via* le RIL et un masque produit *via* la BDTOPO sur un même territoire est présentée dans la @fig-masque_RIL_BDTOPO.
+
+::: {#fig-masque_RIL_BDTOPO layout-ncol=2}
+
+![](img/masqueRIL.png){#fig-masqueRIL width=100%}
+
+![](img/masqueBDTOPO.png){#fig-masqueBDTOPO width=100%}
+
+Masque de logements produit à partir du RIL (a) et à partir de la BDTOPO (b)
+:::
+
+
+Le RIL n'étant disponible que pour un cinquième du territoire, la constitution annuelle du jeu de couples $(images,masques)$ demanderait un travail considérable dans la mesure où ce découpage du territoire en cinq groupes n'est pas une grille carrée se superposant au découpage en tuiles. Cette division est basée sur le zonage administratif par îlots de l'Insee, îlots dont les contours suivent les limites urbaines et naturelles (voir @fig-decoupage_ilot). En outre, les zones d'habitats informels, très largement rencontrées en Guyane et à Mayotte ne sont pas correctement référencées dans le RIL, ce que montre la @fig-montBaduel.
+
+::: {#fig-montBaduel layout-ncol=2}
+
+![](img/mont_baduel_ril_bdtopo.png){#fig-mont_baduel_ril_bdtopo width=100%}
+
+![](img/mont_baduel_bdtopo.png){#fig-mont_baduel_bdtopo width=100%}
+
+Un masque du mont Baduel obtenu via le RIL (a) et celui obtenu à partir de la BDTOPO (b)
+:::
+
+
+![Découpage en ilots de Mayotte](img/decoupage_en_ilot_mayotte.png){#fig-decoupage_ilot width=100%}
+
+
+Une piste de travail avortée faute de moyens avait été explorée et consistait à combiner le concept de logement délivré par le RIL et la précision des contours obtenus via la BDTOPO. Une labellisation manuelle pourrait également être envisagée pour améliorer la qualité des masques produits et se rapprocher au mieux du concept de logement mais celle-ci est très chronophage et il est très difficile d'anticiper les gains de performance qui seraient enregistrés en entraînant un algorithme sur ces masques obtenus manuellement. De plus, dans de nombreux cas, il n'est pas aisé de s'accorder visuellement (même au sein d'une petite équipe) sur ce qui est du logement ou non, c'est pourquoi des règles de décision strictes et couvrant l'ensemble des situations visualisables devraient être produites afin que ces travaux manuels d'annotation ne soient pas trop dépendants de l'interprétation de l'opérateur qui labelliserait à la main.
+
+*In fine*, une vérification manuelle des masques construits automatiquement s'impose mais cette vérification est également coûteuse et n'a pas pu être effectuée pour tout le territoire. 
+Cependant, pour valider la pertinence des algorithmes dont le processus d'entraînement est détaillé dans ce qui suit, un ensemble d'images jugé par l'équipe comme correctement labellisé à été constitué sur Mayotte. 
+
+On retiendra ici que les masques produits automatiquement en utilisant la BDTOPO ne se limitent pas au concept de logement mais à celui de bâti. Ceci est problématique puisqu'un algorithme entraîné sur ces masques ne pourra lui aussi que détecter du bâti. Des travaux futurs devront être menés pour construire des masques de logements.   
+
+
+<!-- % Faire un petit laius su rles bases de donénes déjà annotées peut être sur une autre partie (discussion ?) et leur potentialité si nos algorithmes sont assez généraux on pourrait s'en servir en base d'entrainement à voir
+%je crois que le szegformzer est sensé s'adapter à des échelles différentes, pas vraiemnt le cas en pratique%
+
+%La définition même du changement pose problème d'où le fait d'éviter cette stratégie par différence%
+
+
+
+% concept de logement / bidonville 
+% RIL BDTOPO...
+% Discussion sur la labellisation manuelle coûteuse
+% Discussion sur autres annotation, jeux données annotés etc...
+% montrer les déficiences du RIL avec le mont baduel -->

@@ -5,7 +5,7 @@ author:
       email: raya.berova@insee.fr
       affiliations: 
           - id: Insee
-            name: Institut national de la statistique et des études économiques
+            name: Insee
             department: DMRG
             city: Montrouge
             postal-code: 92541
@@ -13,7 +13,7 @@ author:
       email: gaetan.carrere@insee.fr
       affiliations: 
           - id: Insee
-            name: Institut national de la statistique et des études économiques
+            name: Insee
             department: Dirag
             city: Pointe à Pitre
             postal-code: 971
@@ -21,7 +21,7 @@ author:
       email: thomas.faria@insee.fr
       affiliations:
           - id: Insee
-            name: Institut national de la statistique et des études économiques
+            name: Insee
             department: SSP Lab
             city: Montrouge
             postal-code: 92541
@@ -29,7 +29,7 @@ author:
       email: clement.guillo@insee.fr
       affiliations: 
           - id: Insee
-            name: Institut national de la statistique et des études économiques
+            name: Insee
             department: Dirag
             city: Pointe à Pitre
             postal-code: 971
@@ -37,11 +37,12 @@ author:
       email: tom.seimandi@insee.fr
       affiliations: 
           - id: Insee
-            name: Institut national de la statistique et des études économiques
+            name: Insee
             department: SSP Lab
             city: Montrouge
             postal-code: 92541
 date: last-modified
+lang: fr-FR
 
 format:
   typst:
@@ -53,10 +54,10 @@ format:
     bibliographystyle: apa
 ---
 
-# Introduction
+# Introduction {.unnumbered}
 
 {{< include sections/1-introduction.qmd >}}
 
-## Acknowledgments {.appendix}
+# Préparation des données 
 
-{{< include sections/A-appendix.qmd >}}
+{{< include sections/2-preparation_donnees.qmd >}}

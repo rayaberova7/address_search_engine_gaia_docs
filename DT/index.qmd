@@ -65,3 +65,7 @@ format:
 # Entraînement des algorithmes
 
 {{< include sections/3-algorithme.qmd >}}
+
+# Analyse et mise en forme des sorties
+
+{{< include sections/4-resultats.qmd >}}

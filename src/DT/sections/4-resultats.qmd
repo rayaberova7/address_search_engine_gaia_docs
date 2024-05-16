@@ -47,7 +47,7 @@ On travaille donc dans un premier temps sur le traitement des polygones de bâti
 
 ::: {#fig-pred2023init layout-ncol=2}
 
-![](../img/pred2023init.png){#fig-pred2023init width=100%}
+![](../img/pred2023init.png){#fig-pred2023init2 width=100%}
 
 ![](../img/pred2023initmap.png){#fig-pred2023initmap width=100%}
 

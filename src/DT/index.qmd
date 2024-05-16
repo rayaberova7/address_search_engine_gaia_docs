@@ -57,11 +57,19 @@ abstract: |
 format:
   typst:
     toc: true
+    toc-indent: auto
     section-numbering: 1.1.a
     columns: 1
     keep-typ: true
     bibliography: biblio.bib
     bibliographystyle: apa
+    include-after-body: 
+      - text: |
+          #show outline.entry.where(
+            level: 1): it => {
+              v(12pt, weak: true)
+              strong(it)
+            }
 ---
 
 {{< pagebreak >}}

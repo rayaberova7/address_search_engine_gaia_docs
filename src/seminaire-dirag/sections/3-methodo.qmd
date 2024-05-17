@@ -1,0 +1,6 @@
+## Méthodologie
+
+modèle de segmentation, masque de diff
+
+(variable d'ajustement)
+Tom / 

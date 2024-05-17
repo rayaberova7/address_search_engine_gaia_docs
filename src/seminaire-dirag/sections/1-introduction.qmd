@@ -1,3 +1,13 @@
 ## Introduction
 
-maintenant faut faire la prez eheh
+- Contexte et origine du projet -> pourquoi on a créé cette equipe de ouf
+1er stage Quentin puis groupe avec DOM puis 2 stagiaires assez nulles puis reprise septembre 2023 + dernier stagios depuis mars -> Now MAI 2024 fin expérimentation
+
+- Pourquoi les images satellites ? 
+  Memorandum de varsovie
+  DMRG : besoin d'expertise
+  DMTR : améliorer recensement
+  DOM : améliorer orga de l'enquete carto + soutien  
+  Etude consommation d'espace 
+  
+Thomas / Clement

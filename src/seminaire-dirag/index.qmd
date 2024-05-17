@@ -22,3 +22,13 @@ ascii: true
 ---
 
 {{< include sections/1-introduction.qmd >}}
+
+{{< include sections/2-data.qmd >}}
+
+{{< include sections/3-methodo.qmd >}}
+
+{{< include sections/4-results.qmd >}}
+
+{{< include sections/5-tools.qmd >}}
+
+{{< include sections/6-discussion.qmd >}}

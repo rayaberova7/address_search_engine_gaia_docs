@@ -1,0 +1,5 @@
+## Outils utilisés
+
+Parler des différents outils utilisés. Expliquer la pipeline et l'automatisation des étapes
+
+Thomas 

@@ -8,3 +8,9 @@ sudo dpkg -i quarto.deb
 quarto check install
 rm quarto.deb
 ```
+
+To render the slides from the root of the project: 
+
+```sh
+quarto preview --host 0.0.0.0 --port 5000
+```

@@ -1,5 +1,33 @@
 ## Données
 
+### Qu'est-ce qu'une image ?
+
+Une image en couleurs concatène plusieurs tableaux de chiffres, un tableau pour chaque couleur Rouge (R), Vert (G), Bleu (B) :
+
+![Schéma explicatif image couleur](src/img/rgb.png)
+
+- Une image satellite peut avoir d'autres couches (ou bandes) que les RGB : infrarouge par exemple. 
+- Les images satellites contiennent des données qui contiennent des informations géographiques → chaque pixel a une coordonnée dans l'espace et on peut le localiser.
+
+---
+## Données
+
+### Une image satellite
+
+Plusieurs caractéristiques existent pour une image satellite :
+- **La résolution spatiale :** équivalence entre un pixel et le nombre de mètres couverts par ce dernier
+- **La fréquence d'acquisition :** fréquence des prises de vue pour un même endroit 
+- **La résolution spectrale :** Nombre de bandes
+- **La couverture géographique**
+
+La résolution de l'image et sa fréquence d'acquisition nous intéressent tout particulièrement ici !
+
+---
+## Données
+
+### Images satellite à notre disposition
+
+
 Pleiades/ RIL / BDTOPO
 
 parler sentinel 

@@ -4,3 +4,5 @@ Discussion en reprenant la pipeline pour citer les limites et les besoins
 parler  Judith et sentinel
 Dire ou on en est exactement et ce qu'on a : on a pas un remplacement de l'enquete carto et on sait pas faire le recenssement de Mayotte 
 futur du projet
+
+Facturation des images hautes résolution $\approx 1.50 / km^2$

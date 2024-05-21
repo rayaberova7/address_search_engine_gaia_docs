@@ -21,14 +21,26 @@ css: ../custom.css
 ascii: true
 ---
 
+# Introduction
+
 {{< include sections/1-introduction.qmd >}}
+
+# Images satellitaires
 
 {{< include sections/2-data.qmd >}}
 
+# Méthodologie
+
 {{< include sections/3-methodo.qmd >}}
+
+# Résultats obtenus
 
 {{< include sections/4-results.qmd >}}
 
+# Structure du projet
+
 {{< include sections/5-tools.qmd >}}
+
+# Discussion
 
 {{< include sections/6-discussion.qmd >}}

@@ -25,7 +25,7 @@ ascii: true
 
 {{< include sections/1-introduction.qmd >}}
 
-# Images satellitaires
+# Les données 
 
 {{< include sections/2-data.qmd >}}
 

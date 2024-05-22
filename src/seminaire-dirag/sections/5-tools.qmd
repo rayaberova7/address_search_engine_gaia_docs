@@ -1,5 +1,38 @@
 ## Outils utilisés
 
-Parler des différents outils utilisés. Expliquer la pipeline et l'automatisation des étapes
+- Projet [**techniquement complexe**]{.orange} pour diverses raisons : 
+    - Données [**non traditionnelles**]{.blue2}
+    - [**Volumétrie**]{.blue2} des données 
+    - Besoins [**ressources computationnelles**]{.blue2} élevées
 
-Thomas 
+- Nécessité d'utiliser des [**technologies spécifiques**]{.orange}, pas forcément dans le *toolkit* standard du statisticien
+- Plateforme [SSPCloud](https://datalab.sspcloud.fr/) centrale pour la réalisation d'un tel projet
+- Projet construit en [**6 étapes séquentielles**]{.blue2}
+
+## Etape 1 : Récupération des données
+
+- Récupération [**artisanale**]{.orange} des images Pléiades :
+    - Demandes réalisées par [**mail**]{.blue2} à l'IGN, échanges via [**FTP**]{.blue2}
+    - Groupe *DMRG* créé sur [Dinamis](https://dinamis.data-terra.org/), mais non utilisé
+
+- Images de Guyane via ST973 (partenariat CNES ?)
+- Datation des images [**peu précise**]{.orange} et [**non standardisée**]{.orange}
+- [**Stockage**]{.orange} des images orthos 8bits sur le [SSPCloud](https://datalab.sspcloud.fr/)
+
+## Etape 2 : Preprocessing des images recueillis (Argo Workflow)
+
+
+"Pleiades © CNES_{year}, Distribution AIRBUS DS"
+
+## Etape 3 : Modélisation et entraînement (Argo Workflow, MLflow, Pytorch)
+
+## Etape 4 : Inférence du modèle (API, Argo CD)
+
+## Etape 5 : Mise à disposition des résultats (Geoserver, React)
+
+## Etape 6 : Analyses des résultats selon les cas d'usages
+
+Docker, Kube
+
+Schéma reliant les 5 étapes, identifiant ce qui est automatisé et ce qui ne l'est pas
+

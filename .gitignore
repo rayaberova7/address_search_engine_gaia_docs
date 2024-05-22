@@ -1,5 +1,6 @@
 /.quarto/
 /_site/
+/site_libs/
 *background.svg
 *logo.svg
 *favicon-32x32.png

@@ -63,7 +63,7 @@ Pleiades © CNES_2022, Distribution AIRBUS DS
 
 ## Sources disponibles de localisation de bâtiments
 
-Deux sources d'annotations envisagées pour les bâtiments :
+Deux sources d'annotations envisagées pour les bâtiments&nbsp;:
 
 - Le [**RIL**]{.blue2} (INSEE)
 - La [**BDTOPO**]{.orange} (IGN)

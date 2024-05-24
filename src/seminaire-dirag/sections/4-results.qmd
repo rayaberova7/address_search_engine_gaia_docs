@@ -1,5 +1,129 @@
-## Résultats obtenus
+## Résultats de Mayotte
 
-bien parler des limites, comment interpreter les polygones issus du modèle ? 
+![](../img/pred_2023_mayotte.png){width=50% fig-align="center"}
 
-Gaetan Raya
+##
+
+:::: {.columns}
+
+::: {.column #vcenter width="50%"}
+
+![](../img/pred_2023_mayotte.png){width=90%}
+
+:::
+
+::: {.column #vcenter width="50%"}
+
+![](../img/quartiersmayotte.png){width=100% #vcenter}
+
+:::
+
+::::
+
+Prédictions originales 2023 de Mayotte et localisation des quartiers de l'île (Insee 2012)
+
+## Étalement urbain
+
+![](../img/pred_2020_creation_mayotte.png){width=50% fig-align="center"}
+
+## Construction de logements
+
+::: { layout-ncol=2}
+
+![](../img/pleiade_2020_creation_2023.png){width=100%}
+
+![](../img/pleiade_2023_creation_2023.png){width=100%}
+:::
+
+Prédictions 2023 sur fond d'image 2020 et sur fond d'image 2023
+
+## Prédictions d'un centre-ville
+
+::: {layout-ncol=2}
+
+![](../img/pred2023initmap.png){#fig-pred2023initmap width=100%}
+
+![](../img/pred2023init.png){#fig-pred2023init2 width=95%}
+
+:::
+
+Prédictions originales 2023 d'une zone de Mayotte
+
+## Imperfections du modèle
+
+:::: {.columns}
+
+::: {.column #vcenter width="55%"}
+
+* Frontières entre les images
+* Délimitations imprécises
+* Minuscules polygones
+:::
+
+::: {.column #vcenter width="45%"}
+
+![](../img/pred2023init.png){#fig-pred2023init2 width=100%}
+
+:::
+
+::::
+
+## Nettoyage des polygones
+
+* Application d'un [**buffer**]{.orange} positif puis négatif
+    + Propriétés de [**lissage**]{.blue2} (arrondis)
+    + Clôture des petites brèches dans les bâtiments
+
+![](../img/Buffer.jpg){width=100%}
+
+* [**Fusion**]{.orange} des polygones qui s'interceptent pour effacer les frontières
+
+
+## Petits polygones ?
+
+Présence de petits polygones (de 1m² à 10m²) : qu'en faire ?
+
+* [**Logement décent**]{.blue2} : 9m²
+* [**Mayotte**]{.blue2} : 30% environ des logements n'ont pas accès à l'eau potable
+
+On ne cherche pas que les [**logements décents**]{.orange} :
+
+* Recherche d'[**exhaustivité**]{.blue2} pour soutenir les enquêteurs
+* Objectifs d'[**estimation de population**]{.blue2} (nombre de bâtiments ou surface ?)
+
+## Petits polygones ?
+
+* [**Observations manuelles**]{.orange} : les petits polygones pointent souvent sur des bâtiments qui n'ont pas été repérés entièrement par l'algorithme. Ce n'est donc pas que du bruit.
+
+[**Conclusion**]{.orange} : dans la mesure du possible, on conserve ces polygones.
+
+## Résultat du nettoyage
+
+![](../img/predavecbuffer.png){width=100% fig-align="center"}
+
+## Evolution du bâti
+
+Pour estimer l'évolution de la population, on se penche sur l'évolution de la surface construite.
+
+Plusieurs approches considérées :
+
+* Créations et suppressions "pures" : aucune intersection avec un bâtiment existant
+* Soustraction du bâti de deux années distinctes
+
+C'est la deuxième approche qui est privilégiée car les créations pures peuvent passer à côté de l'étalement d'un quartier.
+
+## Soustraction du bâti
+
+![](../img/schemasoustraction.png){width=100% fig-align="center"}
+
+## Soustraction du bâti
+
+![](../img/creationssuppressions.png){width=100% fig-align="center"}
+
+##
+
+![](../img/creationssuppressionsfiltre.png){width=100% fig-align="center"}
+
+
+
+<!-- bien parler des limites, comment interpreter les polygones issus du modèle ? -->

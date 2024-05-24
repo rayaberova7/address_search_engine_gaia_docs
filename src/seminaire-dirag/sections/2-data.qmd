@@ -12,7 +12,7 @@ Une image en couleurs concatène plusieurs tableaux de chiffres, un tableau pour
 
 ## Caractéristiques d'une image satellite
 
-Plusieurs caractéristiques existent pour une image satellite :
+Plusieurs caractéristiques existent pour une image satellite&nbsp;:
 
 - [**La résolution spatiale**]{.orange}
 - [**La fréquence d'acquisition**]{.orange}

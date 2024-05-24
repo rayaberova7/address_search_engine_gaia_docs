@@ -5,3 +5,11 @@
 ## De segmentation à détection de changements
 
 ![](../img/stratégie_segmentation.png){width=80%}
+
+## Entrainement d'un modèle
+
+- On entraîne un modèle à segmenter automatiquement à partir d'exemples annotés, il faut donc : 
+    1) Récupérer des images satellites
+    2) Produire les annotations de ces images (emplacement des bâtiments)
+    3) On apprend au modèle à reproduire les annotations en partant des images satellites et on espère qu'il se comportera bien sur d'autres images
+

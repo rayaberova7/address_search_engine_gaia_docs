@@ -120,10 +120,18 @@ C'est la deuxième approche qui est privilégiée car les créations pures peuve
 
 ![](../img/creationssuppressions.png){width=100% fig-align="center"}
 
-##
+## Nettoyage de la soustraction
+
+$$
+\text{Indice de Compacite} = (4 * \pi * \text{Aire}) / (\text{Perimetre} ^2)
+$$
+
+Seuiller les polygones selon cet indice permet de supprimer les plus longilignes.
+
+## Résultat 
 
 ![](../img/creationssuppressionsfiltre.png){width=100% fig-align="center"}
 
-
+On obtient donc la différence de bâti d'une année à l'autre.
 
 <!-- bien parler des limites, comment interpreter les polygones issus du modèle ? -->

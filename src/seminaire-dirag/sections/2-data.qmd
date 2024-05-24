@@ -3,14 +3,12 @@
 
 Une image en couleurs concatène plusieurs tableaux de chiffres, un tableau pour chaque couleur Rouge (R), Vert (G), Bleu (B) :
 
-<div style="text-align: center;">
-  <img src="../img/rgb.png" alt="" width=700" height="350">
-</div>
+![](../img/rgb.png){width=75%}
 
 ## Une image satellite
 
 - Une image satellite peut avoir d'autres couches (ou bandes) que les RGB : infrarouge par exemple. 
-- Les images satellites contiennent des données qui contiennent des informations géographiques → chaque pixel a une coordonnée dans l'espace et on peut le localiser.
+- Les images satellites contiennent des informations géographiques → chaque pixel a une coordonnée dans l'espace.
 
 ## Caractéristiques d'une image satellite
 
@@ -26,35 +24,51 @@ La fréquence d'acquisition et la couverture géographique nous intéressent tou
 
 ## Images satellite à notre disposition
 
-### Images très haute résolution
+- Images très haute résolution : **Pléiades** (Airbus)
+- Images haute résolution : **Sentinel2**
 
-**Pléiades** (Airbus)
-**Fréquence d'acquisition** : 
-- Archives gratuites
-- Payant sur demande (1,80€/km²): **6 à 8 mois** pour avoir un département
-**Résolution spectrale** : 3
-**Résolution spatiale** : un pixel = 0.5x0.5 cm
-Taille d'une image : 2000*2000 pixels
+## Images Pléiades
 
-### Images haute résolution
+- **Fréquence d'acquisition** : 
 
-**Sentinel-2**
-**Fréquence d'acquisition** : tous les 5 jours et gratuit
-**Résolution spectrale** : 13
-**Résolution spatiale** : un pixel = 10x10 m
-Taille d'une image : 250*250 pixels
+  - Archives gratuites
+  - Payant sur demande (1,80€/km²): **6 à 8 mois** pour avoir un département
+
+- **Résolution spectrale** : 3
+
+- **Résolution spatiale** : un pixel = 0.5x0.5 m
+
+- Taille d'une image : 2000*2000 pixels = 1km²
+
+## Images Sentinel2
+
+- **Fréquence d'acquisition** : tous les 5 jours et gratuit
+
+- **Résolution spectrale** : 13
+
+- **Résolution spatiale** : un pixel = 10x10 m
+
+- Taille d'une image : 250*250 pixels = 0.625 km²
 
 ## Pléiades vs Sentinel-2
 
-mettre les deux images cote à cote
+::: {layout-ncol=2}
+
+![Pleiades](../img/pleiade.png){width=75%}
+
+![Sentinel2](../img/Sentinel2.png){width=75%}
+
+Pleiades © CNES_2022, Distribution AIRBUS DS
+:::
 
 Nous allons nous focaliser sur les images Pléiades pour cette présentation. 
-Mais pour entraîner un modèle à détecter les bâtiments, il faut savoir où se trouvent les bâtiments sur les images.
 
 ## Sources d'annotations de bâtiments
 
 Obtenir ces annotations peut être coûteux, mais on dispose de données permettant de s'approcher :
+
 - Le RIL (INSEE)
+
 - La BDTOPO (IGN)
 
 ## La BDTOPO
@@ -65,8 +79,7 @@ Obtenir ces annotations peut être coûteux, mais on dispose de données permett
 
 ## Exemple d'annotations BDTOPO
 
-mettre un exemple
-
+![Masque BDTOPO](../img/masqueBDTOPO.png){width=75%}
 
 ## Le RIL
 
@@ -78,8 +91,7 @@ mettre un exemple
 
 ## Exemple d'annotations RIL
 
-mettre un exemple
-
+![Masque RIL](../img/masqueRIL.png){width=75%}
 
 ## Comparaison BDTOPO/RIL
 

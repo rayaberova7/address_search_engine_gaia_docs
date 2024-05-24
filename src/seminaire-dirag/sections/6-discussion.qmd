@@ -1,4 +1,55 @@
+# Test 
 ## Discussion
+
+- Opportunités pour l'enquête cartographique  
+- Première utilisation des algorithmes effectuées par la DMTR pour prioriser l'envoi d'agents sur le terrain
+- Opportunité pour le soutien des estimations de population à Mayotte
+
+## Maintenir les travaux :
+
+- Le produit final, s'appuie sur un bon nombre de briques :
+    - Traitements des données (images, données Insee)
+    - Entraînement des algorithmes de Deep Learning
+    - Production des prédictions via API
+    - Mise en valeur des résultats (application WEB et  mise en place d'un Geoserver)
+
+## Maintenir les travaux :
+
+![](../img/treatment_chain.png){#fig-chain width=100%}
+
+## Les Compétences nécessaires :
+
+- compétences en analyse spatiale 
+- Développement d'application web
+- Veille technique, rester à la pointe en Machine Learning
+- veille sur les données, annotations etc..
+
+
+## Ce qu'on sait faire :
+
+- L'algorithme entraîné permet de mesurer l'évolution du bâti $\longrightarrow$ Peut soutenir l'enquête cartographique  
+- Estimations frustre de population réalisable, à partir des évolutions de bâti, *a minima* pour
+
+## Ce qu'il reste à faire
+
+- Expertiser d'autres jeux de données :
+    - Pour les annotations
+    - Pour les images, données stéréoscopiques, Pleiades neo..
+- Se rapprocher du concept de logement
+- Maîtriser le processus d'acquisition des images, sa temporalité
+- Expertiser les résultats de l'algorithme entraîné et faire 
+
+
+- Mesurer l'écart entre la réalité mesurer par le satellite et la réalité terrain,
+- Travailler sur les jeux de données 
+
+## Les limites
+
+
+
+Beaucoup de briques à sur
+
+## Faire avancer le projet :
 
 Discussion en reprenant la pipeline pour citer les limites et les besoins
 parler  Judith et sentinel
@@ -6,3 +57,13 @@ Dire ou on en est exactement et ce qu'on a : on a pas un remplacement de l'enque
 futur du projet
 
 Facturation des images hautes résolution $\approx 1.50 / km^2$
+
+
+## Coucou 
+- C'est moi
+::: {#fig-comp_resolution layout-ncol=2}
+![](../img/pleiade.png){#fig-pleiade width=100%}
+![](../img/Sentinel2.png){#fig-sentinel2 width=100%}
+Comparaison entre une image PLEIADES très haute résolution (a) et une image Sentinel 2 haute résolution (b)
+:::
+

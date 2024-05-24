@@ -1,6 +1,7 @@
-## Méthodologie
+## Segmentation sémantique
 
-modèle de segmentation, masque de diff
+![](../img/segmentation_exemple.png){width=80%}
 
-(variable d'ajustement)
-Tom / 
+## De segmentation à détection de changements
+
+![](../img/stratégie_segmentation.png){width=80%}

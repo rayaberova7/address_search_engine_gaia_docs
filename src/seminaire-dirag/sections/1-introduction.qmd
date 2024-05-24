@@ -1,13 +1,39 @@
-## Introduction
+## Origine du projet
 
-- Contexte et origine du projet -> pourquoi on a créé cette equipe de ouf
-1er stage Quentin puis groupe avec DOM puis 2 stagiaires assez nulles puis reprise septembre 2023 + dernier stagios depuis mars -> Now MAI 2024 fin expérimentation
+- Dans le cadre du stage de Quentin Chabennet en 2022, participation au [Challenge Data](https://challengedata.ens.fr/) ["Land cover predictive modeling from satellite images"](https://challengedata.ens.fr/challenges/48)
+- SSM Agriculture: travail avec le Centre d'études spatiales de la biosphère (Cesbio). Comparaison de la carte d'[**occupation du sol**]{.orange} issue de l'enquête Teruti avec une carte construite avec des données de télédétection
+- En Guyane, [**fonds de carte issus de données Pleiades**]{.orange} utilisés pour la collecte
+- Discussion sur la possibilité d'utiliser de l'imagerie satellite pour faciliter l'[**organisation de l'enquête cartographique**]{.orange} en Guyane et à Mayotte
 
-- Pourquoi les images satellites ? 
-  Memorandum de varsovie
-  DMRG : besoin d'expertise
-  DMTR : améliorer recensement
-  DOM : améliorer orga de l'enquete carto + soutien  
-  Etude consommation d'espace 
-  
-Thomas / Clement
+## Une source de données à fort potentiel
+
+- En théorie, [**observation de tout le territoire**]{.orange} quasiment en temps réel
+- [**Sentinel-2**]{.orange} : données haute résolution en accès libre à haute fréquence temporelle. Un même territoire est couvert environ tous les 5 jours
+- Communauté utilise ces données, ce qui donne lieu à la publication de [**contenu open-source**]{.orange} (détection de nuages, etc.)
+
+## Une source de données à fort potentiel
+
+- [**Pleiades**]{.orange} : données très haute résolution. Archives disponibles gratuitement pour l'Insee, et possibilité de faire des commandes (**tasking**), gratuites sous un certain quota 
+
+## Utilisation pour la statistique publique
+
+- [Mémorandum de Varsovie](https://dgins2021.stat.gov.pl/warsaw-memorandum) adopté par le Comité du Système statistique européen, pour [**encourager l'utilisation des données satellites**]{.orange} pour l'élaboration de statistiques publiques
+- Utilisation en complément des sources traditionnelles pour améliorer la connaissance de l'Insee sur le [**bâti**]{.orange} :
+  - En particulier dans les DROM, [**facilitation de l'organisation des enquêtes cartographiques**]{.blue2}
+  - [**Cartographie du bâti**]{.blue2} à un instant précis
+  - [**Etudes ponctuelles**]{.blue2} (consommation d'espace)
+
+<!-- A mentionner, meilleure enquête cartographique = meilleur RIL = meilleures enquêtes -->
+
+## Utilisation pour la statistique publique
+
+- Possibilité d'aller jusqu'à contribuer à des [**estimations de population ?**]{.blue2}
+- [**Nombreux acteurs intéressés**]{.orange} : DMS (DMRG), DMTR, directions Antilles-Guyane et La Réunion-Mayotte
+
+## Début des travaux
+
+- [**Détection automatique de changements**]{.orange} (apparitions, disparitions) sur le bâti dans les DROM (Mayotte)
+- Appui pour l'[**organisation des enquêtes cartographiques**]{.orange} :
+  - On sélectionne les [**îlots concernés**]{.blue2}
+  - On récupère des données satellites couvrant ces îlots [**à la date de la précédente enquête**]{.blue2} cartographique et des [**données fraiches**]{.blue2}
+  - A l'aide de la méthode développée, on repère les ilots avec [**beaucoup de nouveaux bâtiments**]{.blue2}, etc.

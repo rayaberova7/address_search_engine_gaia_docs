@@ -4,6 +4,7 @@
     - Données [**non traditionnelles**]{.blue2}
     - [**Volumétrie**]{.blue2} des données 
     - Besoins [**ressources computationnelles**]{.blue2} élevées
+    - [**Reproductibilité**]{.blue2} nécéssaire
 
 - Nécessité d'utiliser des [**technologies spécifiques**]{.orange}, pas forcément dans le *toolkit* standard du statisticien
 - Plateforme [SSPCloud](https://datalab.sspcloud.fr/) centrale pour la réalisation d'un tel projet
@@ -21,65 +22,66 @@
 - Datation des images [**peu précise**]{.orange} et [**non standardisée**]{.orange}
 - [**Stockage**]{.orange} des images orthos 8bits sur le [SSPCloud](https://datalab.sspcloud.fr/)
 
-## Etape 2 : Nettoyage et filtrage des images recueillis
+## Etape 2 : Nettoyage et annotation des images recueillis
 
-- Filtrage ROI / Filtre nuage / découpage des images 
+- Pipeline [**Python**]{.orange} <img height="25" width="25" src="https://cdn.simpleicons.org/python/00000" /> pour formatter les images brutes :
+    - [**Sélection**]{.blue2} des images pour une zone d'intérêt
+    - [**Suppresion**]{.blue2} des images ennuagées
+    - [**Découpage**]{.blue2} des images $125m \times 125m$
 
-- Labellisation des images satellites : 
-    - RIL 
-    - BDTOPO
-    (foutre les images de comparaison)
+- Pipeline de [**labellisation**]{.orange} des images satellites avec la BDTOPO
 
-- Automatisation Année x Département avec Argo Workflow
-
-"Pleiades © CNES_{year}, Distribution AIRBUS DS"
+- Automatisation avec [**Argo Workflow**]{.orange}
 
 ## Etape 3 : Modélisation et entraînement
 
-- Entraînement avec le package Pytorch 
+- Entraînement avec le package [**Pytorch**]{.orange} 
 
-- Suivi et comparaison des modèles avec MLFlow
+- Suivi et comparaison des modèles avec [[**MLFlow**]{.orange}](https://projet-slums-detection-128833.user.lab.sspcloud.fr/#/experiments/10?searchFilter=&orderByKey=attributes.start_time&orderByAsc=false&startTime=ALL&lifecycleFilter=Active&modelVersionFilter=All%20Runs&selectedColumns=attributes.%60Source%60,attributes.%60Models%60,params.%60module_name%60&isComparingRuns=false&compareRunCharts=dW5kZWZpbmVk){preview-link="true"}
 
-- Utilisation GPU SSP Cloud indispensable (8h d'entraînement ?)
+- Utilisation [**GPU**]{.orange} SSP Cloud indispensable (10h d'entraînement)
 
-- Automatisation Année x Département avec Argo Workflow
+- Automatisation Année x Département avec [**Argo Workflow**]{.orange}
 
 ## Etape 4 : Inférence du modèle
 
-- Utilisation de MLFlow pour l'entrepôt de modèle
+- Utilisation de MLFlow pour l'[entrepôt de modèle](https://projet-slums-detection-128833.user.lab.sspcloud.fr/#/models/test){preview-link="true"}
 
-- Déploiement d'une API pour réaliser l'inférence pour : 
-    - une image donnée
-    - un îlot donné
-    - un contour géographique donné
+- Déploiement d'une [**API**]{.orange} pour réaliser l'inférence pour : 
+    - une [**image**]{.blue2} donnée
+    - un [**îlot**]{.blue2} donné
+    - un [**contour géographique**]{.blue2} donné
 
-- Déploiement continu de l'API avec ArgoCD
+- Déploiement continu de l'API avec [**ArgoCD**]{.orange}
 
-- Réalisation de l'inférence sur l'ensemble des images en parallèle avec Argo Workflow
+- Réalisation de l'inférence sur l'ensemble des images en parallèle avec [**Argo Workflow**]{.orange}
 
 ## Etape 5 : Mise à disposition des résultats 
 
-- Déploiement d'un Geoserver pour mettre à disposition les fichiers géographiques (images et prédictions) 
+- Déploiement d'un [**Geoserver**]{.orange} pour mettre à disposition les fichiers géographiques (images et prédictions) 
 
-- Développement d'une application React pour visualiser les résultats
-    - Mettre un lien vers l'appli
+- Développement d'une application [**React**]{.orange} pour visualiser les résultats
+    - [CRATT](https://cratt.kub.sspcloud.fr/){preview-link="true"}
 
 ## Etape 6 : Analyses des résultats selon les cas d'usages
 
-- Travail statistiques sur les prédictions
+- Travail statistique sur les prédictions :
+    - Détection des zones à forte créations/disparition
+    - Production de statistiques par îlot
+    - Evaluation des résultats 
 
 ## En résumé
 
-- Beaucoup d'outils différents à utiliser :
-    - Kubernetes, Docker, stockage MinIO, API, ArgoCD, Argo Workflow, MLFlow
+- 🛠️ [**Multitudes**]{.orange} d'outils à utiliser :
+    - Kubernetes, Docker, stockage MinIO, API, ArgoCD, Argo Workflow, MLFlow, React...
 
-- ... mais dont le coup d'apprentissage est rapidement rentabilisé :
-    - Techno state of the art
-    - Futur de l'info à l'Insee => LS3
+- ... mais dont le coût d'apprentissage est rapidement [**rentabilisé**]{.orange} :
+    - Technologies [**"state of the art"**]{.orange}
+    - De plus en plus utilisées à l'Insee (LS3)
 
 
 ## En résumé
 
 
-Schéma reliant les 5 étapes, identifiant ce qui est automatisé et ce qui ne l'est pas
+Schéma reliant les 6 étapes, identifiant ce qui est automatisé et ce qui ne l'est pas
 

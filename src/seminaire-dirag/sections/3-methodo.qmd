@@ -2,14 +2,13 @@
 
 ![](../img/segmentation_exemple.png){width=80%}
 
+## Entrainement d'un modèle de segmentation
+
+- On entraîne un modèle à segmenter automatiquement [**à partir d'exemples annotés**]{.orange}. Pour cela il faut : 
+    - [**Collecter**]{.blue2} des images satellites
+    - [**Produire les annotations**]{.blue2} de ces images (emplacement des bâtiments)
+- On apprend au modèle à reproduire les annotations en partant des images. On espère qu'il pourra [**généraliser**]{.orange} à d'autres images
+
 ## De segmentation à détection de changements
 
 ![](../img/stratégie_segmentation.png){width=80%}
-
-## Entrainement d'un modèle
-
-- On entraîne un modèle à segmenter automatiquement à partir d'exemples annotés, il faut donc : 
-    1) Récupérer des images satellites
-    2) Produire les annotations de ces images (emplacement des bâtiments)
-    3) On apprend au modèle à reproduire les annotations en partant des images satellites et on espère qu'il se comportera bien sur d'autres images
-

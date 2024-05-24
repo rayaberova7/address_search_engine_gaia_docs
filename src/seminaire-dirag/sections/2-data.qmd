@@ -46,7 +46,16 @@ Taille d'une image : 250*250 pixels
 
 ## Pléiades vs Sentinel-2
 
-mettre les deux images cote à cote
+<div style="display: flex; justify-content: center;">
+  <div style="text-align: center; margin-right: 10px;">
+    <img src="../img/pleiade.png" alt="" width="350" height="175">
+    <p>Pléiades</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="../img/Sentinel2.png" alt="" width="350" height="175">
+    <p>Sentinel2</p>
+  </div>
+</div>
 
 Nous allons nous focaliser sur les images Pléiades pour cette présentation. 
 Mais pour entraîner un modèle à détecter les bâtiments, il faut savoir où se trouvent les bâtiments sur les images.
@@ -65,7 +74,9 @@ Obtenir ces annotations peut être coûteux, mais on dispose de données permett
 
 ## Exemple d'annotations BDTOPO
 
-mettre un exemple
+<div style="text-align: center;">
+  <img src="../img/masqueBDTOPO.png" alt="" width=700" height="350">
+</div>
 
 
 ## Le RIL
@@ -78,7 +89,10 @@ mettre un exemple
 
 ## Exemple d'annotations RIL
 
-mettre un exemple
+<div style="text-align: center;">
+  <img src="../img/masqueRIL.png" alt="" width=700" height="350">
+</div>
+
 
 
 ## Comparaison BDTOPO/RIL

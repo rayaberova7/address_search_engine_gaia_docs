@@ -26,7 +26,7 @@
 
 - Pipeline [**Python**]{.orange} <img height="25" width="25" src="https://cdn.simpleicons.org/python/00000" /> pour formatter les images brutes :
     - [**Sélection**]{.blue2} des images pour une zone d'intérêt
-    - [**Suppresion**]{.blue2} des images ennuagées
+    - [**Suppression**]{.blue2} des images ennuagées
     - [**Découpage**]{.blue2} des images $125m \times 125m$
 
 - Pipeline de [**labellisation**]{.orange} des images satellites avec la BDTOPO
@@ -79,9 +79,18 @@
     - Technologies [**"state of the art"**]{.orange}
     - De plus en plus utilisées à l'Insee (LS3)
 
+## Maintenir les travaux :
 
-## En résumé
+- Le produit final s'appuie sur un bon nombre de briques :
+    - Traitements des données (images, données Insee)
+    - Entraînement des algorithmes de Deep Learning
+    - Production des prédictions via API
+    - Mise en valeur des résultats (application WEB et  mise en place d'un Geoserver)
 
+- [**Coût de maintenance élevé**]{.orange} ! Compétences rares à l'INSEE ([*ou ailleurs ?*]{.blue2})
 
-Schéma reliant les 6 étapes, identifiant ce qui est automatisé et ce qui ne l'est pas
+## Maintenir les travaux :
+
+![](../img/treatment_chain.png){#fig-chain width=100% height=100%}
+
 

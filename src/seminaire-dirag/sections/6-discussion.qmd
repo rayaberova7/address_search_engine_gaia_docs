@@ -1,43 +1,44 @@
-## Discussion
+## Ce qu'on a obtenu
 
-- Opportunités pour l'enquête cartographique  
-- Première utilisation des algorithmes effectuées par la DMTR pour prioriser l'envoi d'agents sur le terrain
+- Résultats prometteurs pour le soutien de l'enquête cartographique  
+- Première utilisation des algorithmes effectuée par la DMTR pour prioriser l'envoi d'agents sur le terrain
 - Opportunité pour le soutien des estimations de population à Mayotte
+- Parti pris de présenter une chaîne complète de production en guise de POC !
+- Choix rapides  $\longrightarrow$ plein d'améliorations possibles
 
-## Maintenir les travaux :
+## Améliorations possibles
 
-- Le produit final, s'appuie sur un bon nombre de briques :
-    - Traitements des données (images, données Insee)
-    - Entraînement des algorithmes de Deep Learning
-    - Production des prédictions via API
-    - Mise en valeur des résultats (application WEB et  mise en place d'un Geoserver)
+- [**Acquisition**]{.orange}: 
+    - Les données Pleiades dont nous disposons sont fournies par l'IGN et sont grossièrement datées à l'année
+    - Travail à fournir pour maîtriser l'acquisition de données PLEIADES  (notamment le temps)
+    - Indispensable si on veut des estimations précisément datées
+    
+- Pré-traitement des données satellites: Les premières briques de prétraitement pourraient être affinées (filtering des nuages, normalisation) et demandent consolidation et validation
 
-## Maintenir les travaux :
+## Améliorations possibles
 
-![](../img/treatment_chain.png){#fig-chain width=100% height=100%}
+- [**Annotation ou récupération d'autres données annotées**]{.orange}, 2 possibilités: 
+    - travailler à la main sur les annotations actuelles pour les améliorer 
+    - récupérer d'autres images annotées ou annotations pour nos images 
 
-## Les Compétences nécessaires :
-
-- compétences en analyse spatiale 
-- Développement d'application web
-- Veille technique, rester à la pointe en Machine Learning
-- veille sur les données, annotations etc..
-
-
-## Ce qu'on sait faire :
-
-- L'algorithme entraîné permet de mesurer l'évolution du bâti $\longrightarrow$ Peut soutenir l'enquête cartographique  
-- Estimations frustre de population réalisable, à partir des évolutions de bâti, *a minima* pour
-
-## Ce qu'il reste à faire
-
-- Expertiser d'autres jeux de données :
-    - Pour les annotations
-    - Pour les images, données stéréoscopiques, Pleiades neo..
-- Se rapprocher du concept de logement
-- Maîtriser le processus d'acquisition des images, sa temporalité
-- Expertiser les résultats de l'algorithme entraîné et faire 
+- [**Entraînement des algorithmes**]{.orange}: 
+    - secondaire par rapport à la qualité des annotations
+    - Suivre l'état de l'art à l'affût de nouveautés (hugging face)
 
 
+## Améliorations possibles
 
+- [**Serving**]{.orange} : applications (API/application de visualisation) à développer au delà des prototypes actuels
+- [**Analyse des résultats**]{.orange}: expertise des modèles encore insuffisante
+- [**Sentinel 2**]{.orange} : Poursuite des travaux de Judith Nabec sur images Sentinel 2 plus simple d'acquisition, et à résolution spectrale plus élevée  (ou sur d'autres images)
+
+## La suite 
+
+- Fin de la phase d'expérimentation
+- Beaucoup de cas d'usage identifiés et de clients finaux
+- Nécessité de monter un véritable projet pour chaque cas d'usage avec des moyens adaptés
+- Ce qui permettra de hiérarchiser les améliorations..
+
+
+# Merci pour votre attention !
 

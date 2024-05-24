@@ -25,13 +25,13 @@ ascii: true
 
 {{< include sections/1-introduction.qmd >}}
 
-# Les données 
-
-{{< include sections/2-data.qmd >}}
-
 # Méthodologie
 
 {{< include sections/3-methodo.qmd >}}
+
+# Les données 
+
+{{< include sections/2-data.qmd >}}
 
 # Résultats obtenus
 

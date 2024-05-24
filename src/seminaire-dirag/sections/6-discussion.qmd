@@ -1,4 +1,3 @@
-# Test 
 ## Discussion
 
 - Opportunités pour l'enquête cartographique  
@@ -15,7 +14,7 @@
 
 ## Maintenir les travaux :
 
-![](../img/treatment_chain.png){#fig-chain width=100%}
+![](../img/treatment_chain.png){#fig-chain width=100% height=100%}
 
 ## Les Compétences nécessaires :
 
@@ -40,30 +39,5 @@
 - Expertiser les résultats de l'algorithme entraîné et faire 
 
 
-- Mesurer l'écart entre la réalité mesurer par le satellite et la réalité terrain,
-- Travailler sur les jeux de données 
 
-## Les limites
-
-
-
-Beaucoup de briques à sur
-
-## Faire avancer le projet :
-
-Discussion en reprenant la pipeline pour citer les limites et les besoins
-parler  Judith et sentinel
-Dire ou on en est exactement et ce qu'on a : on a pas un remplacement de l'enquete carto et on sait pas faire le recenssement de Mayotte 
-futur du projet
-
-Facturation des images hautes résolution $\approx 1.50 / km^2$
-
-
-## Coucou 
-- C'est moi
-::: {#fig-comp_resolution layout-ncol=2}
-![](../img/pleiade.png){#fig-pleiade width=100%}
-![](../img/Sentinel2.png){#fig-sentinel2 width=100%}
-Comparaison entre une image PLEIADES très haute résolution (a) et une image Sentinel 2 haute résolution (b)
-:::
 

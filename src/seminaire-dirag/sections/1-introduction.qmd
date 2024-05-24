@@ -9,7 +9,7 @@
 
 - En théorie, [**observation de tout le territoire**]{.orange} quasiment en temps réel
 - [**Sentinel-2**]{.orange} : données haute résolution en accès libre à haute fréquence temporelle. Un même territoire est couvert environ tous les 5 jours
-- Communauté utilise ces données, ce qui donne lieu à la publication de [**contenu open-source**]{.orange} (détection de nuages, etc.)
+- Une grande communauté utilise ces données, ce qui donne lieu à la publication de [**contenu open-source**]{.orange} (détection de nuages, etc.)
 
 ## Une source de données à fort potentiel
 
@@ -33,7 +33,7 @@
 ## Début des travaux
 
 - [**Détection automatique de changements**]{.orange} (apparitions, disparitions) sur le bâti dans les DROM (Mayotte)
-- Appui pour l'[**organisation des enquêtes cartographiques**]{.orange} :
+- Appui pour l'[**organisation des enquêtes cartographiques**]{.orange}&nbsp;:
   - On sélectionne les [**îlots concernés**]{.blue2}
   - On récupère des données satellites couvrant ces îlots [**à la date de la précédente enquête**]{.blue2} cartographique et des [**données fraiches**]{.blue2}
   - A l'aide de la méthode développée, on repère les ilots avec [**beaucoup de nouveaux bâtiments**]{.blue2}, etc.

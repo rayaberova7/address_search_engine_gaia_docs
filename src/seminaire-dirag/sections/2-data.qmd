@@ -12,14 +12,14 @@ Une image en couleurs concatène plusieurs tableaux de chiffres, un tableau pour
 
 ## Caractéristiques d'une image satellite
 
-Plusieurs caractéristiques existent pour une image satellite :
+Plusieurs caractéristiques existent pour une image satellite&nbsp;:
 
 - **La résolution spatiale :** le nombre de mètres couverts par un pixel
 - **La fréquence d'acquisition :** fréquence des prises de vue pour un même endroit 
 - **La résolution spectrale :** nombre de bandes
 - **La couverture géographique**
 
-La  et la [**couverture géographique**]{.blue2} nous intéressent tout particulièrement ici !
+La [**couverture géographique**]{.blue2} nous intéressent tout particulièrement ici !
 
 
 ## Images satellite à notre disposition

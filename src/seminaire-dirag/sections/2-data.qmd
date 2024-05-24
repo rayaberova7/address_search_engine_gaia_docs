@@ -21,14 +21,71 @@ Plusieurs caractéristiques existent pour une image satellite :
 - **La résolution spectrale :** Nombre de bandes
 - **La couverture géographique**
 
-La a fréquence d'acquisition et la couverture géographique nous intéressent tout particulièrement ici !
+La fréquence d'acquisition et la couverture géographique nous intéressent tout particulièrement ici !
 
 
 ## Images satellite à notre disposition
 
+### Images très haute résolution
 
-Pleiades/ RIL / BDTOPO
+**Pléiades** (Airbus)
+**Fréquence d'acquisition** : 
+- Archives gratuites
+- Payant sur demande (1,80€/km²): **6 à 8 mois** pour avoir un département
+**Résolution spectrale** : 3
+**Résolution spatiale** : un pixel = 0.5x0.5 cm
+Taille d'une image : 2000*2000 pixels
 
-parler sentinel 
+### Images haute résolution
 
-Raya / Clément
+**Sentinel-2**
+**Fréquence d'acquisition** : tous les 5 jours et gratuit
+**Résolution spectrale** : 13
+**Résolution spatiale** : un pixel = 10x10 m
+Taille d'une image : 250*250 pixels
+
+## Pléiades vs Sentinel-2
+
+mettre les deux images cote à cote
+
+Nous allons nous focaliser sur les images Pléiades pour cette présentation. 
+Mais pour entraîner un modèle à détecter les bâtiments, il faut savoir où se trouvent les bâtiments sur les images.
+
+## Sources d'annotations de bâtiments
+
+Obtenir ces annotations peut être coûteux, mais on dispose de données permettant de s'approcher :
+- Le RIL (INSEE)
+- La BDTOPO (IGN)
+
+## La BDTOPO
+
+- Annotation d'un bâtiment = un polygone
+- Elle est construite à partir d'ortho-photos de l'IGN (prises de vue aériennes)
+- Difficile à ce stade d'avoir une information millésimée
+
+## Exemple d'annotations BDTOPO
+
+mettre un exemple
+
+
+## Le RIL
+
+- Annotation d'un bâtiment = un carré qui pointe sur le bâtiment (et non polygone)
+- Le répertoire des immeubles localisés est une base de sondage utilisée pour le RP
+- Dans les DOMs, peu ou pas de permis de construire 
+- L'enquête cartographique met à jour 1/5 des logements dans le territoire (5 groupes de rotation, 1 îlot approximativement 1 GR)
+- Enquête cartographique réalisée d'avril à août sur une année donnée
+
+## Exemple d'annotations RIL
+
+mettre un exemple
+
+
+## Comparaison BDTOPO/RIL
+
+- Finalement, le RIL nous permet d'avoir des points millésimés précisément mais les approximations de contours de logements sont grossières
+- La BDTOPO est moins "millésimable" mais les contours de bâtis obtenus sont plus précis
+- D'autres sources de données sont mobilisables pour les annotations (OpenStreetMap, annotation de google ou de microsoft)
+Nous avons choisi d'entraîner nos modèles sur les annotations BDTOPO.
+
+

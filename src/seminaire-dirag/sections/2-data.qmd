@@ -3,14 +3,12 @@
 
 Une image en couleurs concatène plusieurs tableaux de chiffres, un tableau pour chaque couleur Rouge (R), Vert (G), Bleu (B) :
 
-<div style="text-align: center;">
-  <img src="../img/rgb.png" alt="" width=700" height="350">
-</div>
+![](../img/rgb.png){width=75%}
 
 ## Une image satellite
 
 - Une image satellite peut avoir d'autres couches (ou bandes) que les RGB : infrarouge par exemple. 
-- Les images satellites contiennent des données qui contiennent des informations géographiques → chaque pixel a une coordonnée dans l'espace et on peut le localiser.
+- Les images satellites contiennent des informations géographiques → chaque pixel a une coordonnée dans l'espace.
 
 ## Caractéristiques d'une image satellite
 
@@ -21,14 +19,85 @@ Plusieurs caractéristiques existent pour une image satellite :
 - **La résolution spectrale :** Nombre de bandes
 - **La couverture géographique**
 
-La a fréquence d'acquisition et la couverture géographique nous intéressent tout particulièrement ici !
+La fréquence d'acquisition et la couverture géographique nous intéressent tout particulièrement ici !
 
 
 ## Images satellite à notre disposition
 
+- Images très haute résolution : **Pléiades** (Airbus)
+- Images haute résolution : **Sentinel2**
 
-Pleiades/ RIL / BDTOPO
+## Images Pléiades
 
-parler sentinel 
+- **Fréquence d'acquisition** : 
 
-Raya / Clément
+  - Archives gratuites
+  - Payant sur demande (1,80€/km²): **6 à 8 mois** pour avoir un département
+
+- **Résolution spectrale** : 3
+
+- **Résolution spatiale** : un pixel = 0.5x0.5 m
+
+- Taille d'une image : 2000*2000 pixels = 1km²
+
+## Images Sentinel2
+
+- **Fréquence d'acquisition** : tous les 5 jours et gratuit
+
+- **Résolution spectrale** : 13
+
+- **Résolution spatiale** : un pixel = 10x10 m
+
+- Taille d'une image : 250*250 pixels = 0.625 km²
+
+## Pléiades vs Sentinel-2
+
+::: {layout-ncol=2}
+
+![Pleiades](../img/pleiade.png){width=75%}
+
+![Sentinel2](../img/Sentinel2.png){width=75%}
+
+Pleiades © CNES_2022, Distribution AIRBUS DS
+:::
+
+Nous allons nous focaliser sur les images Pléiades pour cette présentation. 
+
+## Sources d'annotations de bâtiments
+
+Obtenir ces annotations peut être coûteux, mais on dispose de données permettant de s'approcher :
+
+- Le RIL (INSEE)
+
+- La BDTOPO (IGN)
+
+## La BDTOPO
+
+- Annotation d'un bâtiment = un polygone
+- Elle est construite à partir d'ortho-photos de l'IGN (prises de vue aériennes)
+- Difficile à ce stade d'avoir une information millésimée
+
+## Exemple d'annotations BDTOPO
+
+![Masque BDTOPO](../img/masqueBDTOPO.png){width=75%}
+
+## Le RIL
+
+- Annotation d'un bâtiment = un carré qui pointe sur le bâtiment (et non polygone)
+- Le répertoire des immeubles localisés est une base de sondage utilisée pour le RP
+- Dans les DOMs, peu ou pas de permis de construire 
+- L'enquête cartographique met à jour 1/5 des logements dans le territoire (5 groupes de rotation, 1 îlot approximativement 1 GR)
+- Enquête cartographique réalisée d'avril à août sur une année donnée
+
+## Exemple d'annotations RIL
+
+![Masque RIL](../img/masqueRIL.png){width=75%}
+
+## Comparaison BDTOPO/RIL
+
+- Finalement, le RIL nous permet d'avoir des points millésimés précisément mais les approximations de contours de logements sont grossières
+- La BDTOPO est moins "millésimable" mais les contours de bâtis obtenus sont plus précis
+- D'autres sources de données sont mobilisables pour les annotations (OpenStreetMap, annotation de google ou de microsoft)
+Nous avons choisi d'entraîner nos modèles sur les annotations BDTOPO.
+
+

@@ -9,7 +9,9 @@
 - Plateforme [SSPCloud](https://datalab.sspcloud.fr/) centrale pour la réalisation d'un tel projet
 - Projet construit en [**6 étapes séquentielles**]{.blue2}
 
-## Etape 1 : Récupération des données
+<!-- - Utilisation de python obligatoire? -->
+
+## Etape 1 : Récupération des images satellitaires brutes
 
 - Récupération [**artisanale**]{.orange} des images Pléiades :
     - Demandes réalisées par [**mail**]{.blue2} à l'IGN, échanges via [**FTP**]{.blue2}
@@ -19,20 +21,65 @@
 - Datation des images [**peu précise**]{.orange} et [**non standardisée**]{.orange}
 - [**Stockage**]{.orange} des images orthos 8bits sur le [SSPCloud](https://datalab.sspcloud.fr/)
 
-## Etape 2 : Preprocessing des images recueillis (Argo Workflow)
+## Etape 2 : Nettoyage et filtrage des images recueillis
 
+- Filtrage ROI / Filtre nuage / découpage des images 
+
+- Labellisation des images satellites : 
+    - RIL 
+    - BDTOPO
+    (foutre les images de comparaison)
+
+- Automatisation Année x Département avec Argo Workflow
 
 "Pleiades © CNES_{year}, Distribution AIRBUS DS"
 
-## Etape 3 : Modélisation et entraînement (Argo Workflow, MLflow, Pytorch)
+## Etape 3 : Modélisation et entraînement
 
-## Etape 4 : Inférence du modèle (API, Argo CD)
+- Entraînement avec le package Pytorch 
 
-## Etape 5 : Mise à disposition des résultats (Geoserver, React)
+- Suivi et comparaison des modèles avec MLFlow
+
+- Utilisation GPU SSP Cloud indispensable (8h d'entraînement ?)
+
+- Automatisation Année x Département avec Argo Workflow
+
+## Etape 4 : Inférence du modèle
+
+- Utilisation de MLFlow pour l'entrepôt de modèle
+
+- Déploiement d'une API pour réaliser l'inférence pour : 
+    - une image donnée
+    - un îlot donné
+    - un contour géographique donné
+
+- Déploiement continu de l'API avec ArgoCD
+
+- Réalisation de l'inférence sur l'ensemble des images en parallèle avec Argo Workflow
+
+## Etape 5 : Mise à disposition des résultats 
+
+- Déploiement d'un Geoserver pour mettre à disposition les fichiers géographiques (images et prédictions) 
+
+- Développement d'une application React pour visualiser les résultats
+    - Mettre un lien vers l'appli
 
 ## Etape 6 : Analyses des résultats selon les cas d'usages
 
-Docker, Kube
+- Travail statistiques sur les prédictions
+
+## En résumé
+
+- Beaucoup d'outils différents à utiliser :
+    - Kubernetes, Docker, stockage MinIO, API, ArgoCD, Argo Workflow, MLFlow
+
+- ... mais dont le coup d'apprentissage est rapidement rentabilisé :
+    - Techno state of the art
+    - Futur de l'info à l'Insee => LS3
+
+
+## En résumé
+
 
 Schéma reliant les 5 étapes, identifiant ce qui est automatisé et ce qui ne l'est pas
 

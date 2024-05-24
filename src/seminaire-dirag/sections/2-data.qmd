@@ -7,46 +7,46 @@ Une image en couleurs concatène plusieurs tableaux de chiffres, un tableau pour
 
 ## Une image satellite
 
-- Une image satellite peut avoir d'autres couches (ou bandes) que les RGB : infrarouge par exemple. 
-- Les images satellites contiennent des informations géographiques → chaque pixel a une coordonnée dans l'espace.
+- Une image satellite peut avoir d'autres [**couches**]{.orange} (ou [**bandes**]{.orange}) que les RGB : infrarouge par exemple. 
+- Les images satellites contiennent des informations géographiques → [**chaque pixel a des coordonnées**]{.blue2} dans l'espace.
 
 ## Caractéristiques d'une image satellite
 
 Plusieurs caractéristiques existent pour une image satellite :
 
-- **La résolution spatiale :** équivalence entre un pixel et le nombre de mètres couverts par ce dernier
+- **La résolution spatiale :** le nombre de mètres couverts par un pixel
 - **La fréquence d'acquisition :** fréquence des prises de vue pour un même endroit 
-- **La résolution spectrale :** Nombre de bandes
+- **La résolution spectrale :** nombre de bandes
 - **La couverture géographique**
 
-La fréquence d'acquisition et la couverture géographique nous intéressent tout particulièrement ici !
+La  et la [**couverture géographique**]{.blue2} nous intéressent tout particulièrement ici !
 
 
 ## Images satellite à notre disposition
 
-- Images très haute résolution : **Pléiades** (Airbus)
-- Images haute résolution : **Sentinel2**
+- Images très haute résolution : [**Pléiades**]{.blue2} (Airbus)
+- Images haute résolution : [**Sentinel2**]{.orange}
 
 ## Images Pléiades
 
 - **Fréquence d'acquisition** : 
 
   - Archives gratuites
-  - Payant sur demande (1,80€/km²): **6 à 8 mois** pour avoir un département
+  - Payant sur demande (1,80€/km²): [**6 à 8 mois**]{.blue2} pour avoir un département
 
-- **Résolution spectrale** : 3
+- **Résolution spectrale** : [3 bandes (RGB)]{.orange}
 
-- **Résolution spatiale** : un pixel = 0.5x0.5 m
+- **Résolution spatiale** : [un pixel = 0.5x0.5 m]{.blue2}
 
 - Taille d'une image : 2000*2000 pixels = 1km²
 
 ## Images Sentinel2
 
-- **Fréquence d'acquisition** : tous les 5 jours et gratuit
+- **Fréquence d'acquisition** : [tous les 5 jours]{.orange} et gratuit
 
 - **Résolution spectrale** : 13
 
-- **Résolution spatiale** : un pixel = 10x10 m
+- **Résolution spatiale** : [un pixel = 10x10 m]{.blue2}
 
 - Taille d'une image : 250*250 pixels = 0.625 km²
 
@@ -73,7 +73,7 @@ Obtenir ces annotations peut être coûteux, mais on dispose de données permett
 
 ## La BDTOPO
 
-- Annotation d'un bâtiment = un polygone
+- Annotation d'un bâtiment = [un polygone ]{.blue2}
 - Elle est construite à partir d'ortho-photos de l'IGN (prises de vue aériennes)
 - Difficile à ce stade d'avoir une information millésimée
 
@@ -83,7 +83,7 @@ Obtenir ces annotations peut être coûteux, mais on dispose de données permett
 
 ## Le RIL
 
-- Annotation d'un bâtiment = un carré qui pointe sur le bâtiment (et non polygone)
+- Annotation d'un bâtiment = [un carré]{.orange} qui pointe sur le bâtiment (et non polygone)
 - Le répertoire des immeubles localisés est une base de sondage utilisée pour le RP
 - Dans les DOMs, peu ou pas de permis de construire 
 - L'enquête cartographique met à jour 1/5 des logements dans le territoire (5 groupes de rotation, 1 îlot approximativement 1 GR)
@@ -96,7 +96,7 @@ Obtenir ces annotations peut être coûteux, mais on dispose de données permett
 ## Comparaison BDTOPO/RIL
 
 - Finalement, le RIL nous permet d'avoir des points millésimés précisément mais les approximations de contours de logements sont grossières
-- La BDTOPO est moins "millésimable" mais les contours de bâtis obtenus sont plus précis
+- La BDTOPO est moins "millésimable" mais [les contours de bâtis sont plus précis]{.orange}
 - D'autres sources de données sont mobilisables pour les annotations (OpenStreetMap, annotation de google ou de microsoft)
 Nous avons choisi d'entraîner nos modèles sur les annotations BDTOPO.
 

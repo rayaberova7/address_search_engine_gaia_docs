@@ -1,6 +1,6 @@
 ## Résultats de Mayotte
 
-![](../img/pred_2023_mayotte.png){width=50% fig-align="center"}
+![Pleiades © CNES_2022, Distribution AIRBUS DS](../img/pred_2023_mayotte.png){width=50% fig-align="center"}
 
 ##
 
@@ -20,11 +20,11 @@
 
 ::::
 
-Prédictions originales 2023 de Mayotte et localisation des quartiers de l'île (Insee 2012)
+Prédictions originales 2023 de Mayotte et localisation des quartiers de l'île (Insee 2012), Pleiades © CNES_2022, Distribution AIRBUS DS
 
 ## Étalement urbain
 
-![](../img/pred_2020_creation_mayotte.png){width=50% fig-align="center"}
+![Pleiades © CNES_2022, Distribution AIRBUS DS](../img/pred_2020_creation_mayotte.png){width=50% fig-align="center"}
 
 ## Construction de logements
 
@@ -35,7 +35,7 @@ Prédictions originales 2023 de Mayotte et localisation des quartiers de l'île 
 ![](../img/pleiade_2023_creation_2023.png){width=100%}
 :::
 
-Prédictions 2023 sur fond d'image 2020 et sur fond d'image 2023
+Prédictions 2023 sur fond d'image 2020 et sur fond d'image 2023, Pleiades © CNES_2022, Distribution AIRBUS DS
 
 ## Prédictions d'un centre-ville
 
@@ -47,7 +47,7 @@ Prédictions 2023 sur fond d'image 2020 et sur fond d'image 2023
 
 :::
 
-Prédictions originales 2023 d'une zone de Mayotte
+Prédictions originales 2023 d'une zone de Mayotte, Pleiades © CNES_2022, Distribution AIRBUS DS
 
 ## Imperfections du modèle
 

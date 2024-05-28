@@ -54,11 +54,9 @@ La [**fréquence d'acquisition**]{.orange} et la [**couverture géographique**]{
 
 ::: {layout-ncol=2}
 
-![Pleiades](../img/pleiade.png){fig-align="center" width=75%}
+![Pleiades © CNES_2022, Distribution AIRBUS DS](../img/pleiade.png){fig-align="center" width=75%}
 
 ![Sentinel2](../img/Sentinel2.png){fig-align="center" width=75%}
-
-Pleiades © CNES_2022, Distribution AIRBUS DS
 :::
 
 ## Sources disponibles de localisation de bâtiments
@@ -78,7 +76,7 @@ Deux sources d'annotations envisagées pour les bâtiments&nbsp;:
 
 ## Exemple d'annotations RIL
 
-![Masque RIL](../img/masqueRIL.png){width=75%}
+![Masque RIL, Pleiades © CNES_2022, Distribution AIRBUS DS](../img/masqueRIL.png){width=75%}
 
 
 ## La BDTOPO
@@ -92,7 +90,7 @@ Deux sources d'annotations envisagées pour les bâtiments&nbsp;:
 
 ## Exemple d'annotations BDTOPO
 
-![Masque BDTOPO](../img/masqueBDTOPO.png){width=75%}
+![Masque BDTOPO, Pleiades © CNES_2022, Distribution AIRBUS DS](../img/masqueBDTOPO.png){width=75%}
 
 
 

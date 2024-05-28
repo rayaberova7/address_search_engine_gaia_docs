@@ -55,9 +55,9 @@ Prédictions originales 2023 d'une zone de Mayotte
 
 ::: {.column #vcenter width="55%"}
 
-* Frontières entre les images
-* Délimitations imprécises
-* Minuscules polygones
+* [**Frontières**]{.orange} entre les images
+* [**Délimitations imprécises**]{.orange}
+* [**Minuscules polygones**]{.orange}
 :::
 
 ::: {.column #vcenter width="45%"}
@@ -72,7 +72,7 @@ Prédictions originales 2023 d'une zone de Mayotte
 
 * Application d'un [**buffer**]{.orange} positif puis négatif
     + Propriétés de [**lissage**]{.blue2} (arrondis)
-    + Clôture des petites brèches dans les bâtiments
+    + [**Clôture des petites brèches**]{.blue2} dans les bâtiments
 
 ![](../img/Buffer.jpg){width=100%}
 
@@ -103,14 +103,14 @@ On ne cherche pas que les [**logements décents**]{.orange} :
 
 ## Evolution du bâti
 
-Pour estimer l'évolution de la population, on se penche sur l'évolution de la surface construite.
+Pour estimer l'évolution de la population, on se penche sur l'évolution de la [**surface construite**]{.orange}.
 
 Plusieurs approches considérées :
 
-* Créations et suppressions "pures" : aucune intersection avec un bâtiment existant
-* Soustraction du bâti de deux années distinctes
+* Créations et suppressions [**"pures"**]{.orange} : aucune intersection avec un bâtiment existant
+* [**Soustraction du bâti**]{.orange} de deux années distinctes
 
-C'est la deuxième approche qui est privilégiée car les créations pures peuvent passer à côté de l'étalement d'un quartier.
+C'est la [**deuxième approche**]{.orange} qui est privilégiée car les créations pures peuvent passer à côté de l'étalement d'un quartier.
 
 ## Soustraction du bâti
 
@@ -126,12 +126,12 @@ $$
 \text{Indice de Compacite} = (4 * \pi * \text{Aire}) / (\text{Perimetre} ^2)
 $$
 
-Seuiller les polygones selon cet indice permet de supprimer les plus longilignes.
+Seuiller les polygones selon cet indice permet de [**supprimer les plus longilignes**]{.orange}.
 
 ## Résultat 
 
 ![](../img/creationssuppressionsfiltre.png){width=100% fig-align="center"}
 
-On obtient donc la différence de bâti d'une année à l'autre.
+On obtient donc la [**différence de bâti**]{.orange} d'une année à l'autre.
 
 <!-- bien parler des limites, comment interpreter les polygones issus du modèle ? -->

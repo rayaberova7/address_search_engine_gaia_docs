@@ -20,7 +20,7 @@
     - Demandes réalisées par [**mail**]{.blue2} à l'IGN, échanges via [**FTP**]{.blue2}
     - Groupe *DMRG* créé sur [Dinamis](https://dinamis.data-terra.org/), mais non utilisé
 
-- Images de Guyane via ST973 (partenariat CNES ?)
+- Images de Guyane via ST973
 - Datation des images [**peu précise**]{.orange} et [**non standardisée**]{.orange}
 - [**Stockage**]{.orange} des images orthos 8bits sur le [SSPCloud](https://datalab.sspcloud.fr/)
 

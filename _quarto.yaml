@@ -46,4 +46,4 @@ format:
     code-overflow: wrap
     include-in-header: "style/fontawesome.html"
     header-includes: |
-        <link rel="icon" type="image/png" sizes="32x32" href="slides/_extensions/InseeFrLab/onyxia/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="src/_extensions/InseeFrLab/onyxia/favicon-32x32.png">

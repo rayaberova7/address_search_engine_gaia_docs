@@ -45,7 +45,7 @@ ascii: true
 
 1️⃣ Introduction
 
-2️⃣ Méthodologie
+**2️⃣ Méthodologie**
 
 3️⃣ Les données 
 
@@ -65,7 +65,7 @@ ascii: true
 
 2️⃣ Méthodologie
 
-3️⃣ Les données 
+**3️⃣ Les données**
 
 4️⃣ Résultats obtenus
 
@@ -85,7 +85,7 @@ ascii: true
 
 3️⃣ Les données 
 
-4️⃣ Résultats obtenus
+**4️⃣ Résultats obtenus**
 
 5️⃣ Structure du projet
 
@@ -105,7 +105,7 @@ ascii: true
 
 4️⃣ Résultats obtenus
 
-5️⃣ Structure du projet
+**5️⃣ Structure du projet**
 
 6️⃣ Discussion
 
@@ -125,7 +125,7 @@ ascii: true
 
 5️⃣ Structure du projet
 
-6️⃣ Discussion
+**6️⃣ Discussion**
 
 # 6️⃣ Discussion
 

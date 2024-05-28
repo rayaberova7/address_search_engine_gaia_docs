@@ -36,9 +36,9 @@ La [**fréquence d'acquisition**]{.orange} et la [**couverture géographique**]{
 
 - **Résolution spectrale** : [3 bandes (RGB)]{.orange}
 
-- **Résolution spatiale** : [un pixel = 0.5x0.5 m]{.blue2}
+- **Résolution spatiale** : [un pixel = $0.5m \times 0.5m$]{.blue2}
 
-- Taille d'une image : 2000*2000 pixels = 1km²
+- Taille d'une image : $2000 \times 2000$ pixels = 1km²
 
 ## Images Sentinel2
 
@@ -46,9 +46,9 @@ La [**fréquence d'acquisition**]{.orange} et la [**couverture géographique**]{
 
 - **Résolution spectrale** : 13
 
-- **Résolution spatiale** : [un pixel = 10x10 m]{.blue2}
+- **Résolution spatiale** : [un pixel = $10m \times 10m$]{.blue2}
 
-- Taille d'une image : 250*250 pixels = 6.25 km²
+- Taille d'une image : $250 \times 250$ = 6.25 km²
 
 ## Pléiades vs Sentinel-2
 

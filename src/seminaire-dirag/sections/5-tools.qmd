@@ -41,7 +41,7 @@
 
 - Suivi et comparaison des modèles avec [[**MLFlow**]{.orange}](https://projet-slums-detection-128833.user.lab.sspcloud.fr/#/experiments/10?searchFilter=&orderByKey=attributes.start_time&orderByAsc=false&startTime=ALL&lifecycleFilter=Active&modelVersionFilter=All%20Runs&selectedColumns=attributes.%60Source%60,attributes.%60Models%60,params.%60module_name%60&isComparingRuns=false&compareRunCharts=dW5kZWZpbmVk){preview-link="true"}
 
-- Utilisation [**GPU**]{.orange} SSP Cloud indispensable (10h d'entraînement)
+- Utilisation [**GPU**]{.orange} indispensable (10h d'entraînement sur le SSP Cloud)
 
 - Automatisation avec [**Argo Workflow**]{.orange}
 

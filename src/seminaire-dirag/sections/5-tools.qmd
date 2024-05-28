@@ -10,7 +10,9 @@
 - Plateforme [SSPCloud](https://datalab.sspcloud.fr/) centrale pour la réalisation d'un tel projet
 - Projet construit en [**6 étapes séquentielles**]{.blue2}
 
-<!-- - Utilisation de python obligatoire? -->
+## Chaîne de traitement
+
+![](../img/pipeline_donnees_sat.png){#fig-chain2 width=100% height=100%}
 
 ## Etape 1 : Acquisition des images satellitaires
 
@@ -41,7 +43,7 @@
 
 - Utilisation [**GPU**]{.orange} SSP Cloud indispensable (10h d'entraînement)
 
-- Automatisation Année x Département avec [**Argo Workflow**]{.orange}
+- Automatisation avec [**Argo Workflow**]{.orange}
 
 ## Etape 4 : Inférence du modèle
 
@@ -65,10 +67,12 @@
 
 ## Etape 6 : Analyses des résultats selon les cas d'usages
 
-- Travail statistique sur les prédictions :
-    - Détection des zones à forte créations/disparition
+- [**Travail statistique**]{.orange} sur les prédictions :
+    - Détection des zones à forte créations/disparitions
     - Production de statistiques par îlot
     - Evaluation des résultats 
+
+- Dépendant des cas d'usages, quelles [**priorisations**]{.orange} ?
 
 ## En résumé
 
@@ -79,18 +83,4 @@
     - Technologies [**"state of the art"**]{.orange}
     - De plus en plus utilisées à l'Insee (LS3)
 
-## Maintenir les travaux :
-
-- Le produit final s'appuie sur un bon nombre de briques :
-    - Traitements des données (images, données Insee)
-    - Entraînement des algorithmes de Deep Learning
-    - Production des prédictions via API
-    - Mise en valeur des résultats (application WEB et  mise en place d'un Geoserver)
-
-- [**Coût de maintenance élevé**]{.orange} ! Compétences rares à l'INSEE ([*ou ailleurs ?*]{.blue2})
-
-## Maintenir les travaux :
-
-![](../img/treatment_chain.png){#fig-chain width=100% height=100%}
-
-
+- ⚠️ [**Coût de maintenance élevé**]{.orange} ! Compétences rares à l'INSEE ([**ou ailleurs ?**]{.blue2})

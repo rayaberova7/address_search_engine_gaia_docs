@@ -16,13 +16,26 @@ chalkboard: # press the B key to toggle chalkboard
 format:
   onyxia-revealjs:
     output-file: index.html
-    toc: true
-    toc-depth: 1
-    toc-title: "Plan de la présentation"
 controls: true
 css: ../custom.css
 ascii: true
 ---
+
+
+# Plan de la présentation
+
+1️⃣ Introduction
+
+2️⃣ Méthodologie
+
+3️⃣ Les données 
+
+4️⃣ Résultats obtenus
+
+5️⃣ Structure du projet
+
+6️⃣ Discussion
+
 
 # 1️⃣ Introduction
 

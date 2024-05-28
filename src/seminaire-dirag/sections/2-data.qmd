@@ -3,7 +3,7 @@
 
 Une image en couleurs concatène plusieurs tableaux de chiffres, un tableau pour chaque couleur Rouge (R), Vert (G), Bleu (B) :
 
-![](../img/rgb.png){width=75%}
+![](../img/rgb.png){width=75% fig-align="center"}
 
 ## Une image satellite
 

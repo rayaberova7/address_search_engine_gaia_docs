@@ -12,7 +12,7 @@
 
 <!-- - Utilisation de python obligatoire? -->
 
-## Etape 1 : Récupération des images satellitaires brutes
+## Etape 1 : Acquisition des images satellitaires
 
 - Récupération [**artisanale**]{.orange} des images Pléiades :
     - Demandes réalisées par [**mail**]{.blue2} à l'IGN, échanges via [**FTP**]{.blue2}
@@ -22,7 +22,7 @@
 - Datation des images [**peu précise**]{.orange} et [**non standardisée**]{.orange}
 - [**Stockage**]{.orange} des images orthos 8bits sur le [SSPCloud](https://datalab.sspcloud.fr/)
 
-## Etape 2 : Nettoyage et annotation des images recueillis
+## Etape 2 : Nettoyage et annotation des images
 
 - Pipeline [**Python**]{.orange} <img height="25" width="25" src="https://cdn.simpleicons.org/python/00000" /> pour formatter les images brutes :
     - [**Sélection**]{.blue2} des images pour une zone d'intérêt

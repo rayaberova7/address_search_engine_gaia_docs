@@ -1,6 +1,6 @@
 
 ---
-title: Séminaire à la Dirag
+title: Séminaire à la Dirag - Slides
 image: img/toad_guada.jpg
 date: last-modified
 description: |

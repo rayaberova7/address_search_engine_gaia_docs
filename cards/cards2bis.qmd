@@ -1,0 +1,14 @@
+
+---
+title: Séminaire à la Dirag - Vidéo
+image: img/toad_video.jpg
+date: last-modified
+description: |
+  <b>Description :</b> Vidéo du séminaire de mai 2024 à la Dirag.
+author: Raya Berova, Gaëtan Carrere, Thomas Faria, Clément Guillo et Tom Seimandi
+slides:
+  text: vidéo
+  url: src/seminaire-dirag-video/index.html
+order: 3
+lang: fr-FR
+---

@@ -1,0 +1,10 @@
+---
+format:
+  html:
+    header-includes: |
+        <link rel="icon" type="image/png" sizes="32x32" href="../_extensions/InseeFrLab/onyxia/favicon-32x32.png">
+---
+
+# Vidéo du séminaire du 28 mai 2024 à la Dirag
+
+{{< video https://projet-slums-detection.minio.lab.sspcloud.fr/videos/presentation_seminaire.mp4 >}}

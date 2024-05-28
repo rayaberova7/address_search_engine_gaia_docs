@@ -26,11 +26,11 @@
 
 ## Etape 4 : Inférence du modèle
 
-- [**API**]{.orange} à développer au delà du prototype actuel
+- [**API**]{.orange} à développer au delà du prototype actuel en fonction des besoins des clients
 
 ## Etape 5 : Mise à disposition des résultats 
 
-- [**Application de visualisation**]{.orange} à développer au delà du prototype actuel
+- [**Application de visualisation**]{.orange} à développer au delà du prototype actuel en fonction des besoins des clients
 
 ## Etape 6 : Analyses des résultats selon les cas d'usages
 

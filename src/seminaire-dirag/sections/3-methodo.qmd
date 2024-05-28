@@ -1,6 +1,6 @@
 ## Segmentation sémantique
 
-![](../img/segmentation_exemple.png){width=80%}
+![](../img/segmentation_exemple.png){width=80% fig-align="center"}
 
 ## Entrainement d'un modèle de segmentation
 

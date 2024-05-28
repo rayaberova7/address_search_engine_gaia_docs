@@ -72,7 +72,7 @@
 
 ## En résumé
 
-- 🛠️ [**Multitudes**]{.orange} d'outils à utiliser :
+- 🛠️ [**Multitude**]{.orange} d'outils à utiliser :
     - Kubernetes, Docker, stockage MinIO, API, ArgoCD, Argo Workflow, MLFlow, React...
 
 - ... mais dont le coût d'apprentissage est rapidement [**rentabilisé**]{.orange} :

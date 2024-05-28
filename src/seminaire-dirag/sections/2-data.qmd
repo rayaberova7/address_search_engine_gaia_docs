@@ -7,8 +7,8 @@ Une image en couleurs concatène plusieurs tableaux de chiffres, un tableau pour
 
 ## Une image satellite
 
-- Une image satellite peut avoir d'autres [**couches**]{.orange} (ou [**bandes**]{.orange}) que les RGB : infrarouge par exemple. 
-- Les images satellites contiennent des informations géographiques → [**chaque pixel a des coordonnées**]{.blue2} dans l'espace.
+- Une image satellite peut avoir d'autres [**couches**]{.orange} (ou [**bandes**]{.orange}) que les RGB : infrarouge par exemple
+- Les images satellites contiennent des informations géographiques → [**chaque pixel a des coordonnées**]{.blue2} dans l'espace
 
 ## Caractéristiques d'une image satellite
 
@@ -72,8 +72,8 @@ Deux sources d'annotations envisagées pour les bâtiments&nbsp;:
 ## Le RIL
 
 - Annotation d'un bâtiment = [**un point**]{.orange} qui donne l'emplacement du bâtiment (porte d'entrée ?)
-- Le répertoire des immeubles localisés est une base de sondage actualisée dans les DOM par l'enquête cartographique
-- Annotations en quantité limitée : l'enquête cartographique ne met à jour qu'un cinquième des logements du RIL dans les DOM 
+- Le [**répertoire des immeubles localisés**]{.orange} est une base de sondage actualisée dans les DOM par l'[**enquête cartographique**]{.blue2}
+- Annotations en [**quantité limitée**]{.blue2} : l'enquête cartographique ne met à jour qu'un cinquième des logements du RIL dans les DOM 
 - Concept de logement 
 
 ## Exemple d'annotations RIL
@@ -84,10 +84,11 @@ Deux sources d'annotations envisagées pour les bâtiments&nbsp;:
 ## La BDTOPO
 
 - Annotation d'un bâtiment = [**un polygone**]{.blue2}
-- Elle est construite à partir de plusieurs sources, notamment à partir d'ortho-photos de l'IGN (prises de vue aériennes)
+- Elle est construite à partir de plusieurs sources, notamment à partir d'ortho-photos de l'[**IGN**]{.orange} (prises de vue aériennes)
 - Les éléments de la BDTOPO produite une année donnée ne sont pas datés précisément 
-- La BDTOPO n'est pas synchronisée avec les images PLEIADES que l'INSEE acquiert
-- On retient tout de même la BDTOPO pour annoter les images PLEIADES
+- La BDTOPO n'est pas synchronisée avec les images Pléiades que l'INSEE acquiert
+
+[**On la retient tout de même**]{.blue2} pour annoter les images Pléiades.
 
 ## Exemple d'annotations BDTOPO
 

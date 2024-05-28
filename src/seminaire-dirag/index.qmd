@@ -41,21 +41,91 @@ ascii: true
 
 {{< include sections/1-introduction.qmd >}}
 
+# Plan de la présentation
+
+1️⃣ Introduction
+
+2️⃣ Méthodologie
+
+3️⃣ Les données 
+
+4️⃣ Résultats obtenus
+
+5️⃣ Structure du projet
+
+6️⃣ Discussion
+
 # 2️⃣ Méthodologie
 
 {{< include sections/3-methodo.qmd >}}
+
+# Plan de la présentation
+
+1️⃣ Introduction
+
+2️⃣ Méthodologie
+
+3️⃣ Les données 
+
+4️⃣ Résultats obtenus
+
+5️⃣ Structure du projet
+
+6️⃣ Discussion
 
 # 3️⃣ Les données 
 
 {{< include sections/2-data.qmd >}}
 
+# Plan de la présentation
+
+1️⃣ Introduction
+
+2️⃣ Méthodologie
+
+3️⃣ Les données 
+
+4️⃣ Résultats obtenus
+
+5️⃣ Structure du projet
+
+6️⃣ Discussion
+
 # 4️⃣ Résultats obtenus
 
 {{< include sections/4-results.qmd >}}
 
+# Plan de la présentation
+
+1️⃣ Introduction
+
+2️⃣ Méthodologie
+
+3️⃣ Les données 
+
+4️⃣ Résultats obtenus
+
+5️⃣ Structure du projet
+
+6️⃣ Discussion
+
 # 5️⃣ Structure du projet
 
 {{< include sections/5-tools.qmd >}}
+
+# Plan de la présentation
+
+1️⃣ Introduction
+
+2️⃣ Méthodologie
+
+3️⃣ Les données 
+
+4️⃣ Résultats obtenus
+
+5️⃣ Structure du projet
+
+6️⃣ Discussion
 
 # 6️⃣ Discussion
 

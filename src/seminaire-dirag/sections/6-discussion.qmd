@@ -19,8 +19,8 @@
 
 ![](../img/etape2.png){fig-align="center" width=50% height=50%}
 
-- [**Le nettoyage**]{.orange} (filtering des nuages, normalisation) pourraient être consolidées et demandent validation
-- [**Annotation ou récupération d'autres données annotées**]{.orange}, 2 possibilités: 
+- [**Le nettoyage**]{.orange} (filtering des nuages, normalisation) doit être consolidé et demande validation
+- [**Annotation ou récupération d'autres données annotées**]{.orange}, 2 possibilités : 
     - Améliorer les annotations actuelles [**manuellement**]{.blue2} 
     - Récupérer d'[**autres**]{.blue2} images annotées ou annotations pour nos images 
 

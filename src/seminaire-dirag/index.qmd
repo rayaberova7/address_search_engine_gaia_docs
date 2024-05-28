@@ -24,26 +24,26 @@ css: ../custom.css
 ascii: true
 ---
 
-# Introduction
+# 1️⃣ Introduction
 
 {{< include sections/1-introduction.qmd >}}
 
-# Méthodologie
+# 2️⃣ Méthodologie
 
 {{< include sections/3-methodo.qmd >}}
 
-# Les données 
+# 3️⃣ Les données 
 
 {{< include sections/2-data.qmd >}}
 
-# Résultats obtenus
+# 4️⃣ Résultats obtenus
 
 {{< include sections/4-results.qmd >}}
 
-# Structure du projet
+# 5️⃣ Structure du projet
 
 {{< include sections/5-tools.qmd >}}
 
-# Discussion
+# 6️⃣ Discussion
 
 {{< include sections/6-discussion.qmd >}}

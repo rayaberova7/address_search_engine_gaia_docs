@@ -1,0 +1,8 @@
+---
+format:
+  html:
+    header-includes: |
+        <link rel="icon" type="image/png" sizes="32x32" href="../_extensions/InseeFrLab/onyxia/favicon-32x32.png">
+---
+
+# Acquisition

@@ -5,6 +5,7 @@ listing:
   sort: "order asc"
   categories: false
   template: style/listing-grid.ejs
+sidebar: false
 page-layout: full
 toc: false
 ---

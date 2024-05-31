@@ -4,36 +4,41 @@ project:
     - /src/**/index.qmd
     - index.qmd
     - /cards/*.qmd
+    - /src/documentation/acquisition.qmd
 
 website:
   page-navigation: true
   title: "Projet Données Satellites"
   site-url: "https://github.com/orgs/InseeFrLab/teams/satellite-images/repositories"
-
   repo-url: "https://github.com/orgs/InseeFrLab/teams/satellite-images/repositories"
-
   open-graph: true
-
   page-footer:
     left: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
     right:
     - text: "License"
       href: LICENSE
-
   navbar:
     logo: https://upload.wikimedia.org/wikipedia/fr/thumb/1/10/Logo_Insee.svg/1200px-Logo_Insee.svg.png
     align: center
     title: false
     collapse-below: lg
-
     right:
       - icon: github
         href: "https://github.com/orgs/InseeFrLab/teams/satellite-images/repositories"
         aria-label: GitHub
-
     left:
       - href: index.qmd
         text: Accueil
+  sidebar:
+    - style: "docked"
+      background: light
+      contents:
+        - section: "Navigation"
+          contents:
+          - text: "Accueil"
+            href: "src/documentation/index.qmd"
+          - text: "Acquisition"
+            href: "src/documentation/acquisition.qmd"
 
 format:
   html:

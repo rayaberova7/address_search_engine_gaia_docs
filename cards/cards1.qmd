@@ -1,14 +1,13 @@
-
 ---
-title: Document de travail
-image: img/toad_DT.jpg
+title: Documentation 
+image: img/doc.jpeg
 date: last-modified
 description: |
-  <b>Description :</b> Document retraçant les avancées et résultats obtenus sur les travaux exploratoires utilisant des images satellitaires
-author: Raya Berova, Gaëtan Carrere, Thomas Faria, Clément Guillo et Tom Seimandi
+  <b>Description :</b> Ici est rassemblée toute la documentation technique sur le moteur de recherche d'adresse textuel Gaïa
+author: Raya Berova
 slides:
-  text: pdf
-  url: src/DT/index.pdf
+  text: doc
+  url: src/documentation/index.html
 order: 1
 lang: fr-FR
 ---

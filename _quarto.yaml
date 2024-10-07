@@ -4,13 +4,13 @@ project:
     - /src/**/index.qmd
     - index.qmd
     - /cards/*.qmd
-    - /src/documentation/acquisition.qmd
+    - /src/documentation/elasticsearch.qmd
 
 website:
   page-navigation: true
-  title: "Projet Données Satellites"
-  site-url: "https://github.com/orgs/InseeFrLab/teams/satellite-images/repositories"
-  repo-url: "https://github.com/orgs/InseeFrLab/teams/satellite-images/repositories"
+  title: "Moteur de recherche d'adresse Gaïa"
+  site-url: "https://gitlab.insee.fr/sprint-gaia/moteur_es"
+  repo-url: "https://gitlab.insee.fr/sprint-gaia/moteur_es"
   open-graph: true
   page-footer:
     left: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
@@ -24,7 +24,7 @@ website:
     collapse-below: lg
     right:
       - icon: github
-        href: "https://github.com/orgs/InseeFrLab/teams/satellite-images/repositories"
+        href: "https://gitlab.insee.fr/sprint-gaia/moteur_es"
         aria-label: GitHub
     left:
       - href: index.qmd
@@ -37,8 +37,8 @@ website:
           contents:
           - text: "Accueil"
             href: "src/documentation/index.qmd"
-          - text: "Acquisition"
-            href: "src/documentation/acquisition.qmd"
+          - text: "ElasticSearch"
+            href: "src/documentation/elasticsearch.qmd"
 
 format:
   html:

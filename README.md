@@ -1,14 +1,12 @@
-# Documentation de l'expérimentation sur les images satellites
+# Documents relatifs au moteur de recherche d'adresse textuel utilisant ElasticSearch développé pour le projet Gaïa
 
 ## Contenu du site
 
 Le site contient:
 
-- Un document de travail résumant une partie des travaux conduits au cours de l'expérimentation;
-- Les slides présentées lors du séminaire de fin d'expérimentation le 28/05/24 à la Dirag;
-- L'enregistrement vidéo du séminaire;
-- Le lien vers l'application de visualisation;
-- De la documentation sur toutes les parties de l'expérimentation.
+- Les slides du séminaire interne DMS du 28 novembre 2024;
+- L'abstract en anglais pour NTTS 2025 (Eurostat);
+- La documentation du moteur de recherche d'adresse textuel avec ElasticSearch.
 
 ## Build
 

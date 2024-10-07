@@ -1,13 +1,14 @@
 
 ---
-title: Application web
-image: img/toad_cratt.jpeg
+title: Abstract NTTS 2025 (Eurostat)
+image: img/ntts.jpeg
 date: last-modified
 description: |
-  <b>Description :</b> Application web à destination des agents facilitant l'utilisation des résultats fournis par le modèle de segmentation.
+  <b>Description :</b> Abstract en anglais soumis à NTTS 2025.
+author: Raya Berova
 slides:
   text: pdf
-  url: https://cratt.lab.sspcloud.fr/
-order: 4
+  url: src/abstract-ntts/index.html
+order: 3
 lang: fr-FR
 ---
